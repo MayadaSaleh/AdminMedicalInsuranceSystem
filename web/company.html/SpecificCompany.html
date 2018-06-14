@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Company Details</title>
+        <script src="../company.js/jquery-1.7.1.min.js"></script>
+        <script src="../employee.js/getCompanyEmployees.js"></script>
+        <script src="../company.js/SpecificCompany.js"></script>
+
+    </head>
+    <body>
+        <table>
+           <tr>
+                <td>id</td>
+                <td><label id="idComp"></label></td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><label id="name"></label></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><label id="email"></label></td>
+            </tr>
+            <tr>
+                <td>latitude</td>
+                <td><label id="latitude"></label></td>
+
+            </tr>
+            <tr>
+                <td>longitude</td>
+                <td><label id="longitude"></label></td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td><label id="address"></label></td>
+            </tr>
+            <tr>
+                <td>package Type</td>
+                <td><label id="packageType"></label></td>
+            </tr> 
+            <tr>
+                <td>start Date</td>
+                <td><label id="startDate"></label></td>
+            </tr> 
+            <tr>
+                <td>end date</td>
+                <td><label id="endDate"></label></td>
+            </tr> 
+            <tr>
+                <td>CEO</td>
+                <td><label id="ceo"></label></td>
+            </tr> 
+            <tr>
+                <td>medical Insurance Id</td>
+                <td><label id="medicalInsuranceId"></label></td>
+            </tr> 
+            <tr>
+                <td>Phones</td>
+                <td><label id="phone1"></label></td>
+                <td><label id="phone2"></label></td>
+                <td><label id="phone3"></label></td>
+            </tr>  
+        </table>
+
+
+
+        <form method="get" action="../employee.html/insertEmployee.html">
+            
+            <button type="submit" id="getEmployees" onClick="getIdCompany()">Insert Employee</button>
+        </form>
+
+        <h1 style="margin-left: 20px; color:red;">All Employees</h1>
+        <table style="margin-left: 400px; width: 500px; height: 50px;" border="1">
+            <tr style="background-color:white;"><td>employeeId</td><td>email</td><td>phone1</td><td>address</td><td>job</td>
+                <td>password</td><td>image</td><td>companyId</td><td>update</td><td>delete</td></tr>
+            <tbody id="insertRow">
+            </tbody> 
+        </table> 
+
+    </body>
+</html>

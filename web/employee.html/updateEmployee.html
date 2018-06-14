@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script src="../jquery-1.7.1.min.js"></script>
+        <script src="../employee.js/getCompanyEmployees.js"></script>
+        <script src="../employee.js/updateEmployee.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body style="font-family:Arial">
+        <table>
+            <tr>
+                <td>id</td>
+                <td><input type="text" id="employeeId" disabled=""/></td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type="text" id="name" /></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="text" id="email" /></td>
+            </tr>
+            <tr>
+                <td>addressss</td>
+                <td><input type="text" id="address" /></td>
+            </tr>
+            <tr>
+                <td>job</td>
+                <td><input type="text" id="job" /></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="text" id="password" /></td>
+            </tr>
+         
+            <tr>
+                <td>comp idddddddd</td>
+                <td><input type="number" id="companyId" /></td>
+            </tr> 
+            <tr>
+                <td>startDate </td>
+                <td><input type="text" id="startDate" /></td>
+            </tr> 
+            <tr>
+                <td>endDate</td>
+                <td><input type="text" id="endDate" /></td>
+            </tr> 
+            <tr>
+                <td>packageType</td>
+                <td><input type="text" id="packageType" /></td>
+            </tr> 
+            <tr>
+                <td>Phones</td>
+                <td><input type="text" id="phone1" /></td>
+                <td><input type="text" id="phone2" /></td>
+                <td><input type="text" id="phone3" /></td>
+            </tr>   
+            
+            
+             <input type="file" id="fileButton"/>
+
+            <progress value="0" max="100" id="progress">0%</progress><br/><br/>
+            <input type="text" id="urlImage" name="urlImage"/> </br>   
+            <button type="button" id="fileInput" value="upload"></br>
+            </button>        
+            <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+            <script src="../employee.js/uploadImage.js"></script>
+            
+
+        </table>
+        <input type="button" id="updateInsertEmployee" value="Update Employee" onclick="updateEmployeeInCompany()">
+        <br /><br />
+        <div id="resultDiv">
+        </div>
+    </body>
+
+</html>

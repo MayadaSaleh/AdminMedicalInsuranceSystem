@@ -1,0 +1,282 @@
+<!--<!DOCTYPE html>
+
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+
+
+
+<html> 
+    <head>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<!----------------------getttttttttttttttttttttttttt With IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD------->
+
+
+<!--    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetCompany').click(function () {
+                var resultElement = $('#resultDiv');
+
+                var requestData = $('#companyId').val();
+                $.ajax({
+                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/getCompany/'+requestData,
+                    method: 'get',
+                    data: {},
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.message != null) {
+                            resultElement.html(response.companyObject.id +" "+response.companyObject.email+" "+response.status);
+                        }
+                        else {
+                            resultElement.html('Weather: ' + response.weather[0].main + '<br/>'
+                                + 'Description: ' + response.weather[0].description);
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            });
+        });
+    </script>-->
+
+<!--    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetCompany').click(function () {
+                var resultElement = $('#resultDiv');
+                var requestData = $('#companyId').val();
+                $.ajax({
+                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/delete/'+requestData,
+                    type : 'DELETE',
+                    data: {},
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.message != null) {
+                            resultElement.html(+response.message);
+                        }
+                        else {
+                          
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+<body style="font-family:Arial">
+    <table>
+        <tr>
+            <td>id</td>
+            <td><input type="number" id="companyId" /></td>
+        </tr>
+    </table>
+    <input type="button" id="btnGetCompany" value="Get Company Data">
+    <br /><br />
+    <div id="resultDiv">
+    </div>
+</body>
+</html>-->
+
+
+
+
+
+
+
+
+<!--<html> 
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>-->
+  
+<!----------------------updateeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee------->
+
+
+<!--    <script type="text/javascript" src="json2.js"></script>-->
+<!--    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetCompany').click(function () {
+                var resultElement = $('#resultDiv');
+
+                var requestId = $('#companyId').val();
+                var requestName = $('#companyName').val();
+                var requestEmail = $('#companyEmail').val();
+                var requestLat = $('#companyLat').val();
+                var requestLong = $('#companyLong').val();
+               var requestAdd = $('#companyAdd').val();
+                var requestPackage = $('#companyPackage').val();
+                var requestStartDate = $('#companyStartDate').val();
+               var requestEndDate= $('#companyEndDate').val();
+                var requestCeo = $('#companyCeo').val();
+                var requestInsuranceId = $('#companyInsuranceId').val();
+                var requestPhone1 = $('#companyPhone1').val();
+                var requestPhone2 = $('#companyPhone2').val();
+                var requestPhone3 = $('#companyPhone3').val();
+//            var data0 = {id: requestId, name:requestName, email:requestEmail, latitude:requestLat, longitude:requestLong, address:requestAdd, packageType:requestPackage, startDate:requestStartDate, endDate:requestEndDate, ceo:requestCeo, medicalInsuranceId:requestInsuranceId, phones:[requestPhone1, requestPhone2,requestPhone3]};
+//                var json = JSON2.stringify(data0 ); 
+                $.ajax({
+                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/update',
+                    type: 'PUT',
+                    data:JSON.stringify(eval({"id": requestId, "name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":requestInsuranceId, "phones":[requestPhone1, requestPhone2,requestPhone3]})),
+                    contentType: "application/json; charset=utf-8",
+                    dataType:'json',
+                    success: function (response) {
+                        if (response.message != null) {
+                            resultElement.html(response.status);
+                        }
+                        else {
+                            
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            });
+        });
+    </script>-->
+
+
+
+
+
+
+
+<!----------------------Inserttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt------->
+
+<!--
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetCompany').click(function () {
+                var resultElement = $('#resultDiv');
+
+                var requestId = $('#companyId').val();
+                var requestName = $('#companyName').val();
+                var requestEmail = $('#companyEmail').val();
+                var requestLat = $('#companyLat').val();
+                var requestLong = $('#companyLong').val();
+               var requestAdd = $('#companyAdd').val();
+                var requestPackage = $('#companyPackage').val();
+                var requestStartDate = $('#companyStartDate').val();
+               var requestEndDate= $('#companyEndDate').val();
+                var requestCeo = $('#companyCeo').val();
+                var requestInsuranceId = $('#companyInsuranceId').val();
+                var requestPhone1 = $('#companyPhone1').val();
+                var requestPhone2 = $('#companyPhone2').val();
+                var requestPhone3 = $('#companyPhone3').val();
+//            var data0 = {id: requestId, name:requestName, email:requestEmail, latitude:requestLat, longitude:requestLong, address:requestAdd, packageType:requestPackage, startDate:requestStartDate, endDate:requestEndDate, ceo:requestCeo, medicalInsuranceId:requestInsuranceId, phones:[requestPhone1, requestPhone2,requestPhone3]};
+//                var json = JSON2.stringify(data0 ); 
+                $.ajax({
+                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/insert',
+                    type: 'POST',
+                    data:JSON.stringify(eval({"name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":requestInsuranceId, "phones":[requestPhone1, requestPhone2,requestPhone3]})),
+                    contentType: "application/json; charset=utf-8",
+                    dataType:'json',
+                    success: function (response) {
+                        if (response.message != null) {
+                            resultElement.html(response.status);
+                        }
+                        else {
+                            
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            });
+        });
+    </script>-->
+
+
+<!--</head>-->
+<!--<body style="font-family:Arial">
+    <table>
+       <tr>
+           <td>id</td>
+            <td><input type="number" id="companyId" /></td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td><input type="text" id="companyName" /></td>
+        </tr>
+        <tr>
+               <td>email</td>
+            <td><input type="text" id="companyEmail" /></td>
+        </tr>
+        <tr>
+             <td>latitude</td>
+            <td><input type="text" id="companyLat" /></td>
+        </tr>
+          <tr>
+             <td>longitude</td>
+            <td><input type="text" id="companyLong" /></td>
+        </tr>
+          <tr>
+             <td>address</td>
+            <td><input type="text" id="companyAdd" /></td>
+        </tr>
+          <tr>
+             <td>package Type</td>
+            <td><input type="text" id="companyPackage" /></td>
+        </tr> 
+           <tr>
+             <td>start Date</td>
+            <td><input type="text" id="companyStartDate" /></td>
+        </tr> 
+           <tr>
+             <td>end date</td>
+            <td><input type="text" id="companyEndDate" /></td>
+        </tr> 
+        <tr>
+             <td>CEO</td>
+            <td><input type="text" id="companyCeo" /></td>
+        </tr> 
+            <tr>
+             <td>medical Insurance Id</td>
+            <td><input type="text" id="companyInsuranceId" /></td>
+        </tr> 
+            <tr>
+             <td>Phones</td>
+            <td><input type="text" id="companyPhone1" /></td>
+            <td><input type="text" id="companyPhone2" /></td>
+            <td><input type="text" id="companyPhone3" /></td>
+        </tr>    
+    </table>
+    <input type="button" id="btnGetCompany" value="Get Company Data">
+    <br /><br />
+    <div id="resultDiv">
+    </div>
+</body>
+</html>-->
+
+
+
+
+
+
+<html>
+<head>
+<title>Cellar</title>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="get.js"></script>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div>
+    <h1 style="margin-left: 600px; color:red;">All Companies</h1>
+    <table style="margin-left: 400px; width: 500px; height: 50px;" border="1">
+          <tr style="background-color:white;"><td>Id</td><td>Name</td><td>Email</td><td>latitude</td><td>longitude</td><td>address</td><td>package type</td><td>start date</td><td>end date</td><td>ceo</td><td>medical Insurance id</td><td>phone1</td></tr>
+          <tbody id="insertRow">
+          </tbody> 
+		  
+      </table>  
+</div>
+</body>
+</html>

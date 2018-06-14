@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>Cellar</title>
+    <script src="../company.js/jquery-1.7.1.min.js"></script>
+    <script src="../company.js/getAll.js"></script>
+ 
+    </head>
+    <body>
+   <div>
+    <h1 style="margin-left: 600px; color:red;">All Companies</h1>
+    <table style="margin-left: 400px; width: 500px; height: 50px;" border="1">
+          <tr style="background-color:white;"><td>Id</td><td>Name</td><td>Email</td><td>latitude</td><td>longitude</td><td>address</td><td>package type</td><td>start date</td><td>end date</td><td>ceo</td><td>medical Insurance id</td><td>phone1</td>
+              <td>UPDATE</td><td>DELETE</td></tr>
+          <tbody id="insertRow">
+          </tbody> 
+		  
+      </table>  
+    
+    <form method='get' action='InsertCompany.html'>
+        <input type="hidden" id="flagUpdateOrInsert" value="insert"/>
+        <button type='submit'>Insert</button>
+    </form>
+   </div>
+    </body> 
+</html>
