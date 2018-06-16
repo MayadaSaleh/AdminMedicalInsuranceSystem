@@ -21,10 +21,10 @@ function deleteEmployee() {
 //    console.log('delete');
     $.ajax({
         type: 'DELETE',
-        url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+        url: "http://localhost:4048/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
-         window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/employee.html/employee.html";
+         window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + c;
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('error in delete Employee');
@@ -41,13 +41,13 @@ function findAll() {
 
  var str = window.location.href;
     var url = new URL(str );
-    var c = url.searchParams.get("companyId");
+     c = url.searchParams.get("companyId");
 
 
     $.ajax({
         type: 'GET',
      //   url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + c,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + c,
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {
