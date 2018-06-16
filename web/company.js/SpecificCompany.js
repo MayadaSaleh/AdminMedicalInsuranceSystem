@@ -101,7 +101,7 @@ function deleteEmployee() {
         }
     });
      window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
-
+ 
 }
 
 

@@ -9,12 +9,6 @@
             <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/control.html</file>
             <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.js/get_reviews.js</file>
         </group>
-        <group name="UI">
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/employee.js/insertEmployee.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/SpecificCompany.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/employee.html/insertEmployee.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/getAllCompany.html</file>
-        </group>
+        <group name="UI"/>
     </open-files>
 </project-private>
