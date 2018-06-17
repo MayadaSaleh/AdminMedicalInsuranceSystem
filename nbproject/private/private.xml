@@ -9,6 +9,9 @@
             <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/control.html</file>
             <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.js/get_reviews.js</file>
         </group>
-        <group name="UI"/>
+        <group name="UI">
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/insert.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/InsertCompany.html</file>
+        </group>
     </open-files>
 </project-private>
