@@ -24,9 +24,15 @@ function dispalyCompany() {
                            document.getElementById("companyEndDate").value = response.companyObject.endDate;
                            document.getElementById("companyCeo").value = response.companyObject.ceo;
                             document.getElementById("companyInsuranceId").value = response.companyObject.medicalInsuranceId;
+                            if(response.companyObject.phones[0].length > 0 || response.companyObject.phones[1].length > 0 || response.companyObject.phones[2].length > 0)
+                            {
+                            document.getElementById("companyPhone1").type="number";
+                            document.getElementById("companyPhone2").type="number";
+                            document.getElementById("companyPhone3").type="number";
                           document.getElementById("companyPhone1").value = response.companyObject.phones[0];
                            document.getElementById("companyPhone2").value = response.companyObject.phones[1];
                            document.getElementById("companyPhone3").value = response.companyObject.phones[2];
+                       }
                       
                     },
                     error: function (err) {

@@ -10,12 +10,13 @@ and open the template in the editor.
     <script type="text/javascript" src="../company.js/insert.js"></script>
     </head>
     <body style="font-family:Arial">
+        
         <form name="insert" id="apply" action="getAllCompany.html">   
       <table>
       
         <tr>
             <td>name</td>
-            <td><input type="text" id="companyName" name="Name" required/></td>
+            <td><input type="text" id="companyName" pattern="[aA-zZ]{2,20}" name="Name" required/></td>
         </tr>
         <tr>
                <td>email</td>
@@ -23,11 +24,11 @@ and open the template in the editor.
         </tr>
         <tr>
              <td>latitude</td>
-             <td><input type="text" id="companyLat" required /></td>
+             <td><input type="number" id="companyLat" min="0" step="any" required /></td>
         </tr>
           <tr>
              <td>longitude</td>
-             <td><input type="text" id="companyLong" required/></td>
+             <td><input type="number" min="0" step="any" id="companyLong" required/></td>
         </tr>
           <tr>
              <td>address</td>
@@ -35,29 +36,29 @@ and open the template in the editor.
         </tr>
           <tr>
              <td>package Type</td>
-             <td><input type="text" id="companyPackage"  required/></td>
+             <td><input type="number" min="0" step="any" id="companyPackage"  required/></td>
         </tr> 
            <tr>
              <td>start Date</td>
-            <td><input type="text" id="companyStartDate"  required/></td>
+            <td><input type="date" id="companyStartDate"  required/></td>
         </tr> 
            <tr>
              <td>end date</td>
-            <td><input type="text" id="companyEndDate"  required/></td>
+            <td><input type="date" id="companyEndDate"  required/></td>
         </tr> 
         <tr>
              <td>CEO</td>
-            <td><input type="text" id="companyCeo" required /></td>
+            <td><input type="text" id="companyCeo" pattern="[A-Za-z]" required /></td>
         </tr> 
             <tr>
              <td>Phones</td>
              <td><input type="number" id="companyPhone1" required/></td>
-             <td><input type="number" id="companyPhone2" required /></td>
-             <td><input type="number" id="companyPhone3"  required/></td>
+             <td><input type="number" id="companyPhone2"/></td>
+             <td><input type="number" id="companyPhone3"/></td>
         </tr>  
     </table>
          
-   <button type="submit"  onclick="validate()" id="btnGetCompany">Submit</button>
+            <button type="submit"  onclick="validate()" id="btnGetCompany">Submit</button>
     </form>
     <br /><br />
     <div id="resultDiv">

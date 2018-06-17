@@ -31,13 +31,19 @@ if (result) {
                     data: {},
                     dataType: 'json',
                     success: function (response) {
+<<<<<<< HEAD
                           window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
 
+=======
+                         window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
+>>>>>>> f0ad0b2f7e0d0965eff991987a02fd8fef41223b
                     },
                     error: function (err) {
-                        alert(err);
+                       // alert(err);
                     }
+
 });
+
 }
 }
 
@@ -52,7 +58,7 @@ function findAll() {
         $.each(data.companiesList, function(index, element) {
                             console.log(element.id);      
    $("#insertRow").append('<tr><td><a href="SpecificCompany.html?companyId=' + element.id + '&detailFlag=true">'+ element.id + "</a></td><td>" + element.name + "</td><td>" + element.email + "</td>\n\
-                <td>" + element.latitude + "</td><td>" + element.longitude + "</td><td>" + element.address + "</td><td>" + element.packageType + "</td><td>" + element.startDate +"</td><td>" + element.endDate +"</td><td>" + element.ceo +"</td><td>" + element.medicalInsuranceId +"</td><td>" + element.phones+'</td><td><a href="../company.html/UpdateCompany.html?companyId=' + element.id + '">' + 'Update' + '</a></td><td><a href="../company.html/getAllCompany.html?companyId=' + element.id + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
+                <td>" + element.latitude + "</td><td>" + element.longitude + "</td><td>" + element.address + "</td><td>" + element.packageType + "</td><td>" + element.startDate +"</td><td>" + element.endDate +"</td><td>" + element.ceo +"</td><td>" + element.medicalInsuranceId + '</td><td><a href="../company.html/UpdateCompany.html?companyId=' + element.id + '">' + 'Update' + '</a></td><td><a href="../company.html/getAllCompany.html?companyId=' + element.id + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
 
             });
         

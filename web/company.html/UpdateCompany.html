@@ -9,7 +9,7 @@
       
         <tr>
             <td>name</td>
-            <td><input type="text" id="companyName" name="Name" required/></td>
+            <td><input type="text" id="companyName" pattern="[aA-zZ]{2,20}" name="Name" required/></td>
         </tr>
         <tr>
                <td>email</td>
@@ -17,11 +17,11 @@
         </tr>
         <tr>
              <td>latitude</td>
-             <td><input type="text" id="companyLat" required /></td>
+             <td><input type="number"  min="0" step="any" id="companyLat" required /></td>
         </tr>
           <tr>
              <td>longitude</td>
-             <td><input type="text" id="companyLong" required/></td>
+             <td><input type="number"  min="0" step="any" id="companyLong" required/></td>
         </tr>
           <tr>
              <td>address</td>
@@ -29,19 +29,19 @@
         </tr>
           <tr>
              <td>package Type</td>
-             <td><input type="text" id="companyPackage"  required/></td>
+             <td><input type="number" min="0" step="any" id="companyPackage"  required/></td>
         </tr> 
            <tr>
              <td>start Date</td>
-            <td><input type="text" id="companyStartDate"  required/></td>
+             <td><input type="date" id="companyStartDate"  required/></td>
         </tr> 
            <tr>
              <td>end date</td>
-            <td><input type="text" id="companyEndDate"  required/></td>
+             <td><input type="date" id="companyEndDate"  required/></td>
         </tr> 
         <tr>
              <td>CEO</td>
-            <td><input type="text" id="companyCeo" required /></td>
+            <td><input type="text" pattern="[A-Za-z]" id="companyCeo" required /></td>
         </tr> 
             <tr>
              <td>medical Insurance Id</td>
@@ -49,9 +49,9 @@
         </tr> 
             <tr>
              <td>Phones</td>
-             <td><input type="number" id="companyPhone1" required/></td>
-             <td><input type="number" id="companyPhone2" required /></td>
-             <td><input type="number" id="companyPhone3"  required/></td>
+             <td><input type="hidden" id="companyPhone1" /></td>
+             <td><input type="hidden" id="companyPhone2" /></td>
+             <td><input type="hidden" id="companyPhone3" /></td>
         </tr>  
     </table>
          
