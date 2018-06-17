@@ -10,6 +10,8 @@ function dispalyEmployee() {
     var str = window.location.href;
     var url = new URL(str);
     var c = url.searchParams.get("employeeId");
+    transferedCompanyId = url.searchParams.get("companyId");
+                    
 
 //var requestData = $('#employeeId').val();
     $.ajax({
@@ -30,7 +32,7 @@ function dispalyEmployee() {
                 document.getElementById("startDate").value = response.employeePojo.startDate;
                 document.getElementById("endDate").value = response.employeePojo.endDate;
                 document.getElementById("packageType").value = response.employeePojo.packageType;
-                document.getElementById("companyId").value = response.employeePojo.companyId;
+               // document.getElementById("companyId").value = response.employeePojo.companyId;
                 document.getElementById("urlImage").value = response.employeePojo.image;
                 document.getElementById("phone1").value = response.employeePojo.phones[0];
                 document.getElementById("phone2").value = response.employeePojo.phones[1];
@@ -52,14 +54,14 @@ function dispalyEmployee() {
 function updateEmployeeInCompany() {
 
     var resultElement = $('#resultDiv');
-    var requestId = $('#employeeId').val();
+    var requestIDD = $('#employeeId').val();
     var requestName = $('#name').val();
     var requestEmail = $('#email').val();
     var requestAddress = $('#address').val();
     var requestJob = $('#job').val();
     var requestPassword = $('#password').val();
     var requestImage = $('#urlImage').val();
-    var requestCompanyID = $('#companyId').val();
+    var requestCompanyID = transferedCompanyId;
     var requestStartDate = $('#startDate').val();
     var requestEndDate = $('#endDate').val();
     var requestPackageType = $('#packageType').val();
@@ -67,10 +69,13 @@ function updateEmployeeInCompany() {
     var requestPhone2 = $('#phone2').val();
     var requestPhone3 = $('#phone3').val();
 
+
+        console.log("in update id= "+requestIDD);
+
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestId,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestIDD,
         type: 'PUT',
-        data: JSON.stringify(eval({"id": requestId, "email": requestEmail, "name": requestName, "address": requestAddress, "password": requestPassword, "job": requestJob, "image": requestImage, "companyId": requestCompanyID, "startDate": requestStartDate, "endDate": requestEndDate, "packageType": requestPackageType, "phones": [requestPhone1, requestPhone2, requestPhone3]})),
+        data: JSON.stringify(eval({"id": requestIDD, "email": requestEmail, "name": requestName, "address": requestAddress, "password": requestPassword, "job": requestJob, "image": requestImage, "companyId": requestCompanyID, "startDate": requestStartDate, "endDate": requestEndDate, "packageType": requestPackageType, "phones": [requestPhone1, requestPhone2, requestPhone3]})),
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         success: function (response) {
@@ -79,7 +84,9 @@ function updateEmployeeInCompany() {
             } else {
                 resultElement.html("error in updating employee");
             }
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/employee.html/employee.html";
+            
+            
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + transferedCompanyId;
         },
         error: function (err) {
             alert(err);
