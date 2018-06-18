@@ -26,12 +26,14 @@ if (result) {
                 console.log("id in delete method"+elementId);
                 var requestData=elementId;
                 $.ajax({
-                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/delete/'+deletedCompanyID,
+                    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/delete/'+deletedCompanyID,
                     type : 'DELETE',
                     data: {},
                     dataType: 'json',
                     success: function (response) {
-                         window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
+                        
+                          window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
+
                     },
                     error: function (err) {
                        // alert(err);
@@ -47,7 +49,7 @@ if (result) {
 function findAll() {
  $.ajax({ 
     type: 'GET', 
-    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/getAll', 
+    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getAll', 
     dataType: 'json',
     success: function (data) { 
         $.each(data.companiesList, function(index, element) {

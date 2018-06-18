@@ -44,7 +44,7 @@ function getCompany() {
 //     getIdCompany(c);
       findAll(detailCompanyId);
     $.ajax({
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -90,18 +90,19 @@ function deleteEmployee() {
 
     $.ajax({
         type: 'DELETE',
-        url: "http://localhost:4048/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+        url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
       console.log("id of company in delete"+detailCompanyId);
-   //window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+   //window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('error in delete Employee');
         }
     });
-     window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
- 
+    
+     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+
 }
 
 
@@ -119,7 +120,7 @@ function findAll(c) {
     $.ajax({
         type: 'GET',
      //   url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {
@@ -135,6 +136,6 @@ function findAll(c) {
 
 function insertEmp (){
     console.log("in insert method with id = "+detailCompanyId);
-     window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
+     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
   
 }

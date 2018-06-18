@@ -26,7 +26,7 @@ function insertEmployeeInCompany() {
     var requestPassword = $('#password').val();
     var requestImage = $('#urlImage').val();
 //    var requestCompanyID = $('#companyId').val();
-var requestCompanyID =c;
+    var requestCompanyID =c;
     var requestStartDate = $('#startDate').val();
     var requestEndDate = $('#endDate').val();
     var requestPackageType = $('#packageType').val();
@@ -36,7 +36,7 @@ var requestCompanyID =c;
 
 
     $.ajax({
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/insertEmployee',
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/insertEmployee',
         type: 'POST',
         data: JSON.stringify(eval({"email": requestEmail, "name": requestName, "address": requestAddress, "password": requestPassword, "job": requestJob, "image": requestImage, "companyId": requestCompanyID, "startDate": requestStartDate, "endDate": requestEndDate, "packageType": requestPackageType, "phones": [requestPhone1, requestPhone2, requestPhone3]})),
         contentType: "application/json; charset=utf-8",
@@ -50,7 +50,7 @@ var requestCompanyID =c;
                 resultElement.html("error in Insertinng employee");
             }
 
-            window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId="+requestCompanyID;
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId="+requestCompanyID;
 
         },
         error: function (err) {
