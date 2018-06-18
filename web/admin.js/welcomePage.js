@@ -1,9 +1,25 @@
+
+///* 
+// * To change this license header, choose License Headers in Project Properties.
+// * To change this template file, choose Tools | Templates
+// * and open the template in the editor.
+// */
+//
+//
 function checkLoginData(userName, password) {
+
+    // var adminName = document.getElementById("uname").value;
+
+    //   $('#uname').val();
+    //  var adminPassword = document.getElementById("psw").value;
+
+    //$('#psw').val();
 
     console.log(userName);
     console.log(password);
 
     console.log("hhhhhhh");
+
 
     $.ajax({
         url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/admin/checkAdmin',
@@ -15,23 +31,25 @@ function checkLoginData(userName, password) {
             console.log(response.message);
 
             if (response.status === true) {
-                setCookie("username", userName, 30);
-                setCookie("password", password, 30);
-
-              //  window.location.reload();
-
-                //    window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
-
-
-
-
-
+                setCookie("usernameAdminConsolto", userName, 30);
+                setCookie("passwordAdminConsolto", password, 30);
+                suggestionsNumbersDashboard();
+                reviewsNumbersDashboard();
+                //window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
                 //     } else {
                 //  document.getElementById("errorData").innerHTML = "Please Enter valid data";
+            } else {
+                alert("Login error, please try again");
+                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
+                //  window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
             }
         },
         error: function (err) {
-            window.location.reload();
+                alert("Login error, please try again");
+            // window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
 
             //   document.getElementById("errorData").innerHTML = "Please Enter valid data";
         }
@@ -64,12 +82,12 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-    var user = getCookie("username");
-    var password = getCookie("password");
+    var user = getCookie("usernameAdminConsolto");
+    var password = getCookie("passwordAdminConsolto");
     if (user != "" && password != "") {
         alert("Welcome again " + user);
-       // window.location.reload();
-
+        suggestionsNumbersDashboard();
+        reviewsNumbersDashboard();
         //window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
         console.log("inside in");
     } else {
@@ -86,40 +104,29 @@ function checkCookie() {
 
 
 function deleteACookie() {
-    var cname = 'username';
-    var cpass = 'password';
+    console.log("deleteCookieeeee function 111111111111111111111111111");
+    var cname = 'usernameAdminConsolto';
+    var cpass = 'passwordAdminConsolto';
 
     deletecookie(cname, cpass);
-    window.location.reload();
+    //window.location.reload();
 }
 
 
-function deletecookie(cname, cpass) {
+function deletecookie() {
 
-    console.log("deleteCookieeeee");
-    document.cookie = cname + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    document.cookie = cpass + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    //window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+    console.log("deleteCookieeeee function 222222222222222222222");
+//    document.cookie = cname + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+//    document.cookie = cpass + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
+    window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
 
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-suggestionsNumbersDashboard();
-reviewsNumbersDashboard();
 
 
 
@@ -132,7 +139,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-       //     console.log(response.serviceNumbers);
+            //     console.log(response.serviceNumbers);
             document.getElementById("hospialNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -146,7 +153,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-       //     console.log(response.serviceNumbers);
+            //     console.log(response.serviceNumbers);
             document.getElementById("labNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -161,7 +168,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-         //   console.log(response.serviceNumbers);
+            //   console.log(response.serviceNumbers);
             document.getElementById("clinicNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -176,7 +183,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-        //    console.log(response.serviceNumbers);
+            //    console.log(response.serviceNumbers);
             document.getElementById("pharmacyNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
