@@ -44,13 +44,13 @@ function getCompany() {
 //     getIdCompany(c);
       findAll(detailCompanyId);
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
         method: 'get',
         data: {},
         dataType: 'json',
         success: function (response) {
             if (response.message != null) {
-//                $('#idComp').text(response.companyObject.id);
+                $('#NameHeader').text(response.companyObject.name);
                 $('#name').text(response.companyObject.name);
                 $('#email').text(response.companyObject.email);
                 $('#latitude').text(response.companyObject.latitude);
@@ -90,7 +90,7 @@ function deleteEmployee() {
 
     $.ajax({
         type: 'DELETE',
-        url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+        url: "http://localhost:4048/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
       console.log("id of company in delete"+detailCompanyId);
@@ -101,7 +101,7 @@ function deleteEmployee() {
         }
     });
     
-     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+     window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
 
 }
 
@@ -120,12 +120,15 @@ function findAll(c) {
     $.ajax({
         type: 'GET',
      //   url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {
-                $("#insertRow").append('<tr><td><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">' + element.id + "</a></td><td>" + element.email + "</td><td>" + element.phones[0] + "</td>\n\
-                <td>" + element.address + "</td><td>" + element.job + "</td><td>" + element.password + "</td><td>" + element.image + "</td><td>" + element.companyId + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + 'Update' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
+//                $("#insertRow").append('<tr><td><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">' + element.id + "</a></td><td>" + element.email + "</td><td>" + element.phones[0] + "</td>\n\
+//                <td>" + element.address + "</td><td>" + element.job + "</td><td>" + element.password + "</td><td>" + element.image + "</td><td>" + element.companyId + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + 'Update' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
+
+
+  $("#insertRow").append('<tr><td class="mainName"><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">'+ element.id + "</a></td><td>" + element.name + "</td><td>" + element.job + "</td><td>" + element.startDate +"</td><td>" + element.endDate + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + '<i class="fas fa-pencil-alt"></i>' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + '<i class="fas fa-trash-alt"></i>' + "</a></td></tr>");
 
             });
         }
@@ -136,6 +139,6 @@ function findAll(c) {
 
 function insertEmp (){
     console.log("in insert method with id = "+detailCompanyId);
-     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
+     window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
   
 }

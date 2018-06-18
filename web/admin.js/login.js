@@ -32,13 +32,13 @@ function checkLoginData(userName, password) {
             if (response.status === true) {
                 setCookie("username", userName, 30);
                 setCookie("password", password, 30);
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+                window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
                 //     } else {
                 //  document.getElementById("errorData").innerHTML = "Please Enter valid data";
             }
         },
         error: function (err) {
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
+            window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
 
             //   document.getElementById("errorData").innerHTML = "Please Enter valid data";
         }
@@ -75,7 +75,7 @@ function checkCookie() {
     var password = getCookie("password");
     if (user != "" && password != "") {
         alert("Welcome again " + user);
-        window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+        window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
         console.log("inside in");
     } else {
         user = prompt("Please enter your name:", "");
