@@ -31,13 +31,9 @@ if (result) {
                     data: {},
                     dataType: 'json',
                     success: function (response) {
-<<<<<<< HEAD
                           window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
 
-=======
-                         window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
->>>>>>> f0ad0b2f7e0d0965eff991987a02fd8fef41223b
-                    },
+                 },
                     error: function (err) {
                        // alert(err);
                     }

@@ -100,13 +100,7 @@ function deleteEmployee() {
             alert('error in delete Employee');
         }
     });
-<<<<<<< HEAD
      window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
-
-=======
-     window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
- 
->>>>>>> f0ad0b2f7e0d0965eff991987a02fd8fef41223b
 }
 
 
