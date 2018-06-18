@@ -35,13 +35,22 @@ function checkLoginData(userName, password) {
                 setCookie("passwordAdminConsolto", password, 30);
                 suggestionsNumbersDashboard();
                 reviewsNumbersDashboard();
+
                 //window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
                 //     } else {
                 //  document.getElementById("errorData").innerHTML = "Please Enter valid data";
+            } else {
+                alert("Login error, please try again");
+                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
             }
         },
         error: function (err) {
+
             window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
+
+                alert("Login error, please try again");
 
             //   document.getElementById("errorData").innerHTML = "Please Enter valid data";
         }
@@ -80,7 +89,9 @@ function checkCookie() {
         alert("Welcome again " + user);
         suggestionsNumbersDashboard();
         reviewsNumbersDashboard();
+
         //window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
         console.log("inside in");
     } else {
         user = prompt("Please enter your name:", "");
@@ -96,6 +107,7 @@ function checkCookie() {
 
 
 function deleteACookie() {
+
     console.log("deleteCookieeeee function 111111111111111111111111111"); 
     var cname = 'usernameAdminConsolto';
     var cpass = 'passwordAdminConsolto';
@@ -110,6 +122,7 @@ function deletecookie() {
     console.log("deleteCookieeeee function 222222222222222222222");
 //    document.cookie = cname + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 //    document.cookie = cpass + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
 document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
@@ -131,7 +144,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-       //     console.log(response.serviceNumbers);
+            //     console.log(response.serviceNumbers);
             document.getElementById("hospialNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -145,7 +158,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-       //     console.log(response.serviceNumbers);
+            //     console.log(response.serviceNumbers);
             document.getElementById("labNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -160,7 +173,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-         //   console.log(response.serviceNumbers);
+            //   console.log(response.serviceNumbers);
             document.getElementById("clinicNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
@@ -175,7 +188,7 @@ function suggestionsNumbersDashboard() {
         data: {},
         dataType: 'json',
         success: function (response) {
-        //    console.log(response.serviceNumbers);
+            //    console.log(response.serviceNumbers);
             document.getElementById("pharmacyNumberSuggestion").innerHTML = response.serviceNumbers;
         },
         error: function (err) {
