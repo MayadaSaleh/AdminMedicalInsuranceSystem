@@ -22,7 +22,7 @@ function checkLoginData(userName, password) {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/admin/checkAdmin',
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/admin/checkAdmin',
         type: 'POST',
         data: JSON.stringify(eval({"username": userName, "password": password})),
         contentType: "application/json; charset=utf-8",
@@ -35,21 +35,22 @@ function checkLoginData(userName, password) {
                 setCookie("passwordAdminConsolto", password, 30);
                 suggestionsNumbersDashboard();
                 reviewsNumbersDashboard();
-                //window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
+                //window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
                 //     } else {
                 //  document.getElementById("errorData").innerHTML = "Please Enter valid data";
             } else {
                 alert("Login error, please try again");
                 window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
 
-                //  window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
             }
         },
         error: function (err) {
-                alert("Login error, please try again");
-            // window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
 
+            window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/errrrrr.html";
+
+                alert("Login error, please try again");
 
             //   document.getElementById("errorData").innerHTML = "Please Enter valid data";
         }
@@ -88,15 +89,17 @@ function checkCookie() {
         alert("Welcome again " + user);
         suggestionsNumbersDashboard();
         reviewsNumbersDashboard();
-        //window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
+        //window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+
         console.log("inside in");
     } else {
         user = prompt("Please enter your name:", "");
         password = prompt("Please enter your password:", "");
 
-        console.log(user);
-        console.log(password);
-
+            console.log(user);
+            console.log(password);
+            
         checkLoginData(user, password);
     }
 }
@@ -104,7 +107,8 @@ function checkCookie() {
 
 
 function deleteACookie() {
-    console.log("deleteCookieeeee function 111111111111111111111111111");
+
+    console.log("deleteCookieeeee function 111111111111111111111111111"); 
     var cname = 'usernameAdminConsolto';
     var cpass = 'passwordAdminConsolto';
 
@@ -118,10 +122,11 @@ function deletecookie() {
     console.log("deleteCookieeeee function 222222222222222222222");
 //    document.cookie = cname + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 //    document.cookie = cpass + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-    window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
 
 }
 
@@ -134,7 +139,7 @@ function deletecookie() {
 function suggestionsNumbersDashboard() {
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 1,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 1,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -148,7 +153,7 @@ function suggestionsNumbersDashboard() {
     });
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 4,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 4,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -163,7 +168,7 @@ function suggestionsNumbersDashboard() {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 2,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 2,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -178,7 +183,7 @@ function suggestionsNumbersDashboard() {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 3,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionOfMedicalServiceId=' + 3,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -198,7 +203,7 @@ function suggestionsNumbersDashboard() {
 function reviewsNumbersDashboard() {
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 1,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 1,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -212,7 +217,7 @@ function reviewsNumbersDashboard() {
     });
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 4,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 4,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -227,7 +232,7 @@ function reviewsNumbersDashboard() {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 2,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 2,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -242,7 +247,7 @@ function reviewsNumbersDashboard() {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 3,
+        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/reviews/get/reviewOfMedicalServiceId=' + 3,
         method: 'get',
         data: {},
         dataType: 'json',

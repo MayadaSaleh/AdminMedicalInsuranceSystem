@@ -50,7 +50,7 @@ function getCompany() {
         dataType: 'json',
         success: function (response) {
             if (response.message != null) {
-//                $('#idComp').text(response.companyObject.id);
+                $('#NameHeader').text(response.companyObject.name);
                 $('#name').text(response.companyObject.name);
                 $('#email').text(response.companyObject.email);
                 $('#latitude').text(response.companyObject.latitude);
@@ -62,8 +62,6 @@ function getCompany() {
                 $('#ceo').text(response.companyObject.ceo);
                 $('#medicalInsuranceId').text(response.companyObject.medicalInsuranceId);
                 $('#phone1').text(response.companyObject.phones[0]);
-                $('#phone2').text(response.companyObject.phones[1]);
-                $('#phone3').text(response.companyObject.phones[2]);
 //                requestId =c;
 
      console.log("id of comapny c isssssssss"+detailCompanyId);
@@ -89,9 +87,9 @@ function deleteEmployee() {
     console.log("id of company in delete"+detailCompanyId);
 
     $.ajax({
-        type: 'DELETE',
-        
+        type: 'DELETE',        
         url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
       console.log("id of company in delete"+detailCompanyId);
@@ -101,7 +99,9 @@ function deleteEmployee() {
          //   alert('error in delete Employee');
         }
     });
+    
      window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+
 }
 
 
@@ -123,8 +123,11 @@ function findAll(c) {
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {
-                $("#insertRow").append('<tr><td><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">' + element.id + "</a></td><td>" + element.email + "</td><td>" + element.phones[0] + "</td>\n\
-                <td>" + element.address + "</td><td>" + element.job + "</td><td>" + element.password + "</td><td>" + element.image + "</td><td>" + element.companyId + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + 'Update' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
+//                $("#insertRow").append('<tr><td><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">' + element.id + "</a></td><td>" + element.email + "</td><td>" + element.phones[0] + "</td>\n\
+//                <td>" + element.address + "</td><td>" + element.job + "</td><td>" + element.password + "</td><td>" + element.image + "</td><td>" + element.companyId + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + 'Update' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + 'Delete' + "</a></td></tr>");
+
+
+  $("#insertRow").append('<tr><td class="mainName"><a href="../employee.html/getEmployee.html?employeeId=' + element.id + '">'+ element.id + "</a></td><td>" + element.name + "</td><td>" + element.job + "</td><td>" + element.startDate +"</td><td>" + element.endDate + '</td><td><a href="../employee.html/updateEmployee.html?employeeId=' + element.id + '&companyId=' + element.companyId +'">' + '<i class="fas fa-pencil-alt"></i>' + '</a></td><td><a href="../company.html/SpecificCompany.html?employeeId=' + element.id+ '&companyId='+ element.companyId + '&DeleteFlag=true">' + '<i class="fas fa-trash-alt"></i>' + "</a></td></tr>");
 
             });
         }

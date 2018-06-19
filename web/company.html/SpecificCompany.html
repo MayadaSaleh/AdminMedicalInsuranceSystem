@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<!--<html>
     <head>
         <title>Company Details</title>
         <script src="../company.js/jquery-1.7.1.min.js"></script>
@@ -83,4 +83,612 @@ and open the template in the editor.
         </table> 
 
     </body>
+</html>-->
+
+
+
+<html class="no-js before-run" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+
+    <title>Consolto</title>
+
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="../assets/css/site.css">
+
+    <link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-sweetalert/sweet-alert.css">
+    <link rel="stylesheet" href="../assets/vendor/footable/footable.core.css">
+
+    <link rel="stylesheet" href="../assets/css/pages/companies.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free/web-fonts-with-css/css/fontawesome-all.css">
+
+    <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+
+    <!-- Scripts -->
+    <script src="../assets/vendor/modernizr/modernizr.js"></script>
+    <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+
+    </script>
+    <script src="../company.js/jquery-1.7.1.min.js"></script>
+    <script src="../employee.js/insertEmployee.js"></script>
+   <script src="../company.js/SpecificCompany.js"></script>
+</head>
+
+<body>
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                    <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+                </button>
+            <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search" data-toggle="collapse">
+                    <span class="sr-only">Toggle Search</span>
+                    <i class="icon wb-search" aria-hidden="true"></i>
+                </button>
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle">
+                <img class="navbar-brand-logo" src="../assets/images/logo.png" title="Consolto">
+                <span class="navbar-brand-text"> Consolto</span>
+            </div>
+        </div>
+
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="hidden-float" id="toggleMenubar">
+                        <a data-toggle="menubar" href="#" role="button">
+                                <i class="icon hamburger hamburger-arrow-left">
+                                    <span class="sr-only">Toggle menubar</span>
+                                    <span class="hamburger-bar"></span>
+                                </i>
+                            </a>
+                    </li>
+                    <li class="hidden-xs" id="toggleFullscreen">
+                        <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                            </a>
+                    </li>
+<!--                    <li class="hidden-float">
+                        <a class="icon wb-search" data-toggle="collapse" href="#site-navbar-search" role="button">
+                                <span class="sr-only">Toggle Search</span>
+                            </a>
+                    </li>-->
+                </ul>
+                <!-- End Navbar Toolbar -->
+
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+<!--                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
+                                <span class="flag-icon flag-icon-us"></span>
+                            </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">
+                                        <span class="flag-icon flag-icon-gb"></span> English</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">
+                                        <span class="flag-icon flag-icon-fr"></span> French</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">
+                                        <span class="flag-icon flag-icon-cn"></span> Chinese</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">
+                                        <span class="flag-icon flag-icon-de"></span> German</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">
+                                        <span class="flag-icon flag-icon-nl"></span> Dutch</a>
+                            </li>
+                        </ul>
+                    </li>-->
+
+<!--                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="slide-bottom" role="button">
+                                <i class="icon wb-bell" aria-hidden="true"></i>
+                                <span class="badge badge-danger up">5</span>
+                            </a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                            <li class="dropdown-menu-header" role="presentation">
+                                <h5>NOTIFICATIONS</h5>
+                                <span class="label label-round label-danger">New 5</span>
+                            </li>
+
+                            <li class="list-group" role="presentation">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                    <i class="icon wb-order bg-red-600 white icon-circle" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">A new order has been placed</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">5 hours ago</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                    <i class="icon wb-user bg-green-600 white icon-circle" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Completed the task</h6>
+                                                    <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">2 days ago</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                    <i class="icon wb-settings bg-red-600 white icon-circle" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Settings updated</h6>
+                                                    <time class="media-meta" datetime="2015-06-11T14:05:00+08:00">2 days ago</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                    <i class="icon wb-calendar bg-blue-600 white icon-circle" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Event started</h6>
+                                                    <time class="media-meta" datetime="2015-06-10T13:50:18+08:00">3 days ago</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                    <i class="icon wb-chat bg-orange-600 white icon-circle" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Message received</h6>
+                                                    <time class="media-meta" datetime="2015-06-10T12:34:48+08:00">3 days ago</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-menu-footer" role="presentation">
+                                <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
+                                        <i class="icon wb-settings" aria-hidden="true"></i>
+                                    </a>
+                                <a href="javascript:void(0)" role="menuitem">
+                                        All notifications
+                                    </a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <li class="dropdown">
+                        <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
+                                <span class="avatar avatar-online">
+                                    <img src="../assets/portraits/5.jpg" alt="...">
+                                    <i></i>
+                                </span>
+                            </a>
+                        <ul class="dropdown-menu" role="menu">
+<!--                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+                            </li>
+                            <li class="divider" role="presentation"></li>-->
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+
+            <!-- Site Navbar Seach -->
+            <div class="collapse navbar-search-overlap" id="site-navbar-search">
+                <form role="search">
+                    <div class="form-group">
+                        <div class="input-search">
+                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                            <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search" data-toggle="collapse" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Site Navbar Seach -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <div>
+                <div>
+                    <ul class="site-menu">
+                        <li class="site-menu-category"></li>
+
+                        <li class="site-menu-item ">
+                            <a href="index.html" data-slug="dashboard">
+                                    <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Dashboard</span>
+                                    <div class="site-menu-badge">
+                                        <span class="badge badge-success">2</span>
+                                    </div>
+                                </a>
+                        </li>
+                        <li class="site-menu-item  active">
+                            <a href="companies.html" data-slug="layout">
+                                    <i class="site-menu-icon fas fa-building" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Companies</span>
+                                </a>
+                        </li>
+                        <li class="site-menu-item ">
+                            <a href="" data-slug="page">
+                                    <i class="site-menu-icon fas fa-user-md" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Medical Services</span>
+                                </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a href="" data-slug="uikit">
+                                    <i class="site-menu-icon fas fa-comments" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Suggestion</span>
+                                </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="site-menubar-footer">
+            <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Settings">
+                    <span class="icon wb-settings" aria-hidden="true"></span>
+                </a>
+
+            <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
+                    <span class="icon wb-power" aria-hidden="true"></span>
+                </a>
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page companiesPage">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="page-title" id="NameHeader"></h1>
+                        <ol class="breadcrumb ">
+                            <li><a href="../admin.html/index.html">Home</a></li>
+                            <li><a href="companies.html">Companies List</a></li>
+                            <li class="active">Company Details</li>
+                        </ol>
+                    </div>
+<!--                    <div class="col-md-5">
+                        <div class="page-header-actions">
+                            <a class="btn btn-sm sec-btn btn-default btn-outline btn-round" href="companyForm.html">
+                                    <i class="icon fas fa-pencil-alt" aria-hidden="true"></i>
+                                    <span class="">Edit Company</span>
+                                </a>
+                            <a class="btn btn-sm sec-btn btn-default btn-outline btn-round exampleWarningCancel" type="button">
+                                    <i class="icon fas fa-trash-alt" aria-hidden="true"></i>
+                                    <span class="">Delete Company</span>
+                                </a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="panel mainInfo">
+                <div class="row">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-building"></i>
+                        <span id="name"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-id-card-alt"></i>
+                        <span id="phone1"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-user-tie"></i>
+                        <span id="ceo"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-wallet"></i>
+                        <span id="packageType"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-hourglass-start"></i>
+                        <span id="startDate"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-hourglass-end"></i>
+                        <span id="endDate"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-location-arrow"></i>
+                        <span> 
+                                <span class="lat" id="latitude"></span>
+                        <span>-</span>
+                        <span class="long" id="longitude"></span>
+                        </span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="address"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                      <i class="fas fa-id-card-alt"></i>
+                        <span id="email"></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Panel Pagination -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h3 class="panel-title">Employees List</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <div class=" page-header-actions secbtn-header-actions">
+                                <form method="get">
+                               <button  type="button" id="getEmployees" onclick="insertEmp()" class="btn btn-sm btn-default btn-outline btn-round" >
+                                        <i class="icon fas fa-plus" aria-hidden="true"></i>
+                                        <span class="">New Employee</span>
+                               </button>
+                             </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="tableMain">
+                        <div class="showNum">
+                            <label class="form-inline ">Show
+                                    <select id="exampleShow" class="form-control input-sm">
+                                        <option value="5">5</option>
+                                        <option value="10" selected="selected">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                    entries
+                                </label>
+                        </div>
+                        <table class="table employeesTable toggle-arrow-tiny" id="insertRow" data-page-size="10">
+                            <thead>
+                                <tr>
+                                    <th data-toggle="true">Employee ID</th>
+                                    <th data-hide="phone">Name</th>
+                                    <th data-hide="phone">Job </th>
+                                    <th data-hide="phone">Start Date</th>
+                                    <th data-hide="phone">End Date</th>
+                                    <th data-hide="" class="stopSort"></th>
+                                    <th data-hide="" class="stopSort"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+<!--                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">234GSA</a></td>
+                                    <td><a href="perEmployee.html">Rashad Ahmed</a></td>
+                                    <td>CEO</td>
+                                    <td>1 Nov 2014</td>
+                                    <td>23 Sep 2019</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">3213QQW</a></td>
+                                    <td><a href="perEmployee.html">Reem Magdy</a></td>
+                                    <td>UI Developer</td>
+                                    <td>12 June 2014</td>
+                                    <td>31 Sep 2019</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">Q323HA</a></td>
+                                    <td><a href="perEmployee.html">Aya Osama</a></td>
+                                    <td>Android Developer</td>
+                                    <td>12 May 2015</td>
+                                    <td>12 July 2030</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">89113ZX</a></td>
+                                    <td><a href="perEmployee.html">Fouad Negm</a></td>
+                                    <td>Senior IOS Developer</td>
+                                    <td>7 Aug 2010</td>
+                                    <td>23 March 2015</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">35345ZX</a></td>
+                                    <td><a href="perEmployee.html">Yousra Ziad</a></td>
+                                    <td>.Net Developer</td>
+                                    <td>6 Feb 2008</td>
+                                    <td>6 March 2019</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">343CX</a></td>
+                                    <td><a href="perEmployee.html">Magda Atef</a></td>
+                                    <td>HR Specialiest</td>
+                                    <td>2 Sep 2017</td>
+                                    <td>30 Sep 2019</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mainName"><a href="perEmployee.html">234QY</a></td>
+                                    <td><a href="perEmployee.html">Osama Salah</a></td>
+                                    <td>Frontend Developer</td>
+                                    <td>1 April 2005</td>
+                                    <td>12 Oct 2015</td>
+                                    <td><a href="employeeForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>-->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="text-right">
+                                            <ul class="pagination"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Panel Pagination -->
+
+        </div>
+    </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <span class="site-footer-legal">© 2018 Consolto</span>
+    </footer>
+
+    <!-- Core  -->
+    <script src="../assets/vendor/jquery/jquery.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="../assets/vendor/animsition/jquery.animsition.js"></script>
+    <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+    <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+    <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+    <script src="../assets/vendor/footable/footable.all.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../assets/vendor/switchery/switchery.min.js"></script>
+    <script src="../assets/vendor/intro-js/intro.js"></script>
+    <script src="../assets/vendor/screenfull/screenfull.js"></script>
+    <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="../assets/vendor/bootstrap-sweetalert/sweet-alert.js"></script>
+
+
+    <!-- Scripts -->
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/site.js"></script>
+
+    <script src="../assets/js/sections/menu.js"></script>
+    <script src="../assets/js/sections/menubar.js"></script>
+    <script src="../assets/js/sections/sidebar.js"></script>
+
+    <script src="../assets/js/configs/config-colors.js"></script>
+    <script src="../assets/js/configs/config-tour.js"></script>
+
+    <script src="../assets/js/components/asscrollable.js"></script>
+    <script src="../assets/js/components/animsition.js"></script>
+    <script src="../assets/js/components/slidepanel.js"></script>
+    <script src="../assets/js/components/switchery.js"></script>
+    <script src="../assets/js/components/bootstrap-sweetalert.js"></script>
+
+
+    <script>
+        (function(document, window, $) {
+            'use strict';
+
+            var Site = window.Site;
+            $(document).ready(function() {
+                Site.run();
+            });
+
+            // Pagination
+            // ----------
+            (function() {
+                $('#examplePagination').footable();
+                $('#exampleShow').change(function(e) {
+                    e.preventDefault();
+                    var pagesize = $(this).find('option:selected').val();
+                    $('#examplePagination').data('page-size', pagesize);
+                    $('#examplePagination').trigger('footable_initialized');
+                });
+            })();
+
+
+            $('.exampleWarningCancel').on("click", function() {
+                swal({
+                        title: "You will delete this item",
+                        text: "You will not be able to recover this item again",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: '#DD6B55',
+                        confirmButtonText: "No, cancel please !",
+                        cancelButtonText: 'Yes, delete it !',
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+
+                            swal("Cancelled", "Your item is safe :)",
+                                "error");
+                        } else {
+                            swal("Deleted ",
+                                "Your item has been deleted ",
+                                "success");
+                        }
+                    });
+            });
+        })(document, window, jQuery);
+
+    </script>
+
+</body>
+
 </html>

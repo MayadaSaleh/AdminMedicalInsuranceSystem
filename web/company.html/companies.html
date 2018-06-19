@@ -1,70 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!--<html>
-    <head>
-        <script type="text/javascript" src="../company.js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="../company.js/insert.js"></script>
-    </head>
-    <body style="font-family:Arial">
-        
-        <form name="insert" id="apply" action="getAllCompany.html">   
-      <table>
-      <!--        <tr>
-            <td>name</td>
-            <td><input type="text" id="companyName" pattern="[aA-zZ]{2,20}" name="Name" required/></td>
-        </tr>
-        <tr>
-               <td>email</td>
-               <td><input type="email" id="companyEmail" required /></td>
-        </tr>
-        <tr>
-             <td>latitude</td>
-             <td><input type="number" id="companyLat" min="0" step="any" required /></td>
-        </tr>
-          <tr>
-             <td>longitude</td>
-             <td><input type="number" min="0" step="any" id="companyLong" required/></td>
-        </tr>
-          <tr>
-             <td>address</td>
-            <td><input type="text" id="companyAdd" required/></td>
-        </tr>
-          <tr>
-             <td>package Type</td>
-             <td><input type="number" min="0" step="any" id="companyPackage"  required/></td>
-        </tr> 
-           <tr>
-             <td>start Date</td>
-            <td><input type="date" id="companyStartDate"  required/></td>
-        </tr> 
-           <tr>
-             <td>end date</td>
-            <td><input type="date" id="companyEndDate"  required/></td>
-        </tr> 
-        <tr>
-             <td>CEO</td>
-            <td><input type="text" id="companyCeo" pattern="[A-Za-z]" required /></td>
-        </tr> 
-            <tr>
-             <td>Phones</td>
-             <td><input type="number" id="companyPhone1" required/></td>
-             <td><input type="number" id="companyPhone2"/></td>
-             <td><input type="number" id="companyPhone3"/></td>
-        </tr>  
-    </table>
-         
-            <button type="submit"  onclick="validate()" id="btnGetCompany">Submit</button>
-    </form>-->
-<!--    <br /><br />
-    <div id="resultDiv">
-    </div> 
-    </body>
-</html>-->
-
 <html class="no-js before-run" lang="en">
 
 <head>
@@ -90,37 +24,29 @@ and open the template in the editor.
     <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
     <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
-
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-sweetalert/sweet-alert.css">
     <link rel="stylesheet" href="../assets/vendor/footable/footable.core.css">
 
     <link rel="stylesheet" href="../assets/css/pages/companies.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="../assets/fonts/fontawesome-free/web-fonts-with-css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/css/fontawesome-all.css">
 
     <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-
-    <!--[if lt IE 9]>
-<script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
-<![endif]-->
-
-    <!--[if lt IE 10]>
-<script src="../assets/vendor/media-match/media.match.min.js"></script>
-<script src="../assets/vendor/respond/respond.min.js"></script>
-<![endif]-->
-
+   <script src="../assets/vendor/bootstrap-sweetalert/sweet-alert.js"></script>
     <!-- Scripts -->
     <script src="../assets/vendor/modernizr/modernizr.js"></script>
     <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+    
     <script>
         Breakpoints();
-
     </script>
-    <script type="text/javascript" src="../company.js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="../company.js/insert.js"></script>
+    
+      <script src="../company.js/jquery-1.7.1.min.js"></script>
+    <script src="../company.js/getAll.js"></script>
 </head>
 
 <body>
@@ -150,9 +76,9 @@ and open the template in the editor.
 
         <div class="navbar-container container-fluid">
             <!-- Navbar Collapse -->
-            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
-                <!-- Navbar Toolbar -->
-                <ul class="nav navbar-toolbar">
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse"><!--
+                 Navbar Toolbar 
+-->                <ul class="nav navbar-toolbar">
                     <li class="hidden-float" id="toggleMenubar">
                         <a data-toggle="menubar" href="#" role="button">
                                 <i class="icon hamburger hamburger-arrow-left">
@@ -171,11 +97,11 @@ and open the template in the editor.
                                 <span class="sr-only">Toggle Search</span>
                             </a>
                     </li>-->
-                </ul>
-                <!-- End Navbar Toolbar -->
+                </ul><!--
+                 End Navbar Toolbar 
 
-                <!-- Navbar Toolbar Right -->
-                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                 Navbar Toolbar Right 
+-->                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
 <!--                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
                                 <span class="flag-icon flag-icon-us"></span>
@@ -309,9 +235,9 @@ and open the template in the editor.
                             </li>
                         </ul>
                     </li>
-                </ul>
-                <!-- End Navbar Toolbar Right -->
-            </div>
+                </ul><!--
+                 End Navbar Toolbar Right 
+-->            </div>
             <!-- End Navbar Collapse -->
 
             <!-- Site Navbar Seach -->
@@ -326,9 +252,9 @@ and open the template in the editor.
                     </div>
                 </form>
             </div>
-             End Site Navbar Seach -->
-        </div>
-    </nav>
+             End Site Navbar Seach 
+-->       </div>
+</nav>
     <div class="site-menubar">
         <div class="site-menubar-body">
             <div>
@@ -379,154 +305,161 @@ and open the template in the editor.
                 </a>
         </div>
     </div>
+    
+    
     <!-- Page -->
-    <div class="page  formPage">
+    <div class="page companiesPage">
         <div class="page-content">
+           
             <div class="page-header">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-title">Add New Company</h1>
+                    <div class="col-md-8">
+                        <h1 class="page-title">Companies List</h1>
                         <ol class="breadcrumb ">
                             <li><a href="../admin.html/index.html">Home</a></li>
-                            <li><a href="companies.html">Companies</a></li>
-                            <li class="active">Add Company</li>
+                            <li class="active">Companies</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="page-header-actions">
+                             <form method='get' action='InsertCompany.html'>
+              <button type='submit' class="btn btn-sm btn-default btn-outline btn-round" >
+                      
+                                    <i class="icon fas fa-plus" aria-hidden="true"></i>
+                                    <span class="">New Company</span>
+                        </button>
+            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-  
-            
-            
-            
-            
-            <div class="panel">
-                <form name="insert" id="apply" action="companies.html">
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-building" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" id="companyName" class="form-control" placeholder="Company Name" name="Name" required />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="email" id="companyEmail" required class="form-control" placeholder="Company email" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user-tie" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" id="companyCeo" required class="form-control" placeholder="Company CEO Name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-wallet" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="number" min="0" step="any" id="companyPackage"  required class="form-control" placeholder="Company Package">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" id="companyStartDate" required class="form-control" placeholder="Start Date">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" id="companyEndDate"  required class="form-control" placeholder="End Date">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="number" id="companyLat" min="0" step="any" required class="form-control" placeholder="Company Lat">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="number" min="0" step="any" id="companyLong" required class="form-control" placeholder="Company Long">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input  type="text" id="companyAdd" required class="form-control" placeholder="Company Location">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" id="companyPhone1" required class="form-control" placeholder="Company phone" />
-                                </div>
-                            </div>
-                        </div> 
+            <!-- Panel Pagination -->
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="showNum">
+                        <label class="form-inline ">Show
+                                <select id="exampleShow" class="form-control input-sm">
+                                    <option value="5">5</option>
+                                    <option value="10" selected="selected">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                                entries
+                            </label>
                     </div>
-                    <div class="row">
-                        <div class="actionBtn text-center">
-                            <button class="btn btn-default btn-outline btn-round"  type="submit"  onclick="validate()" id="btnGetCompany">
-                                        <i class="icon fas fa-check" aria-hidden="true"></i>
-                                        <span class="">DONE</span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                    <table class="table companyTable toggle-arrow-tiny" id="examplePagination" data-page-size="10">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Name</th>
+
+                                <th data-hide="phone">Company ID</th>
+                                <th data-hide="phone">Package </th>
+                                <th data-hide="phone">Start Date</th>
+                                <th data-hide="phone">End Date</th>
+                                <th data-hide="" class="stopSort"></th>
+                                <th data-hide="" class="stopSort"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="insertRow">
+<!--
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">Badr IT</a></td>
+                                <td>234GSA</td>
+                                <td>30%</td>
+                                <td>1 Nov 2014</td>
+                                <td>23 Sep 2019</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">Civilsoft IT</a></td>
+                                <td>3432JKS</td>
+                                <td>50%</td>
+                                <td>23 Jan 2016</td>
+                                <td>21 June 2010</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">Enozom</a></td>
+                                <td>2323HA</td>
+                                <td>10%</td>
+                                <td>12 May 2015</td>
+                                <td>12 July 2030</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">CrossIT</a></td>
+                                <td>23113ZX</td>
+                                <td>20%</td>
+                                <td>7 Aug 2010</td>
+                                <td>23 March 2015</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">The Matra</a></td>
+                                <td>35345ZX</td>
+                                <td>20%</td>
+                                <td>6 Feb 2008</td>
+                                <td>6 March 2019</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">Innuva</a></td>
+                                <td>343CX</td>
+                                <td>5%</td>
+                                <td>2 Sep 2017</td>
+                                <td>30 Sep 2019</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">TraingleZ</a></td>
+                                <td>234QY</td>
+                                <td>60%</td>
+                                <td>1 April 2005</td>
+                                <td>12 Oct 2015</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">SoftXpert</a></td>
+                                <td>32434</td>
+                                <td>70%</td>
+                                <td>4 Jan 2001</td>
+                                <td>23 Sep 2019</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="mainName"><a href="perCompany.html">Badr IT</a></td>
+                                <td>234GSA</td>
+                                <td>30%</td>
+                                <td>1 Nov 2014</td>
+                                <td>23 Sep 2019</td>
+                                <td><a href="companyForm.html"><i class="fas fa-pencil-alt"></i></a></td>
+                                <td><a type="button" class="exampleWarningCancel"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>-->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12">
+                                    <div class="text-right">
+                                        <ul class="pagination"></ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
+            <!-- End Panel Pagination -->
+
         </div>
     </div>
     <!-- End Page -->
@@ -553,7 +486,7 @@ and open the template in the editor.
     <script src="../assets/vendor/intro-js/intro.js"></script>
     <script src="../assets/vendor/screenfull/screenfull.js"></script>
     <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
-
+    <script src="../assets/vendor/bootstrap-sweetalert/sweet-alert.js"></script>
 
     <!-- Scripts -->
     <script src="../assets/js/core.js"></script>
@@ -570,6 +503,7 @@ and open the template in the editor.
     <script src="../assets/js/components/animsition.js"></script>
     <script src="../assets/js/components/slidepanel.js"></script>
     <script src="../assets/js/components/switchery.js"></script>
+    <script src="../assets/js/components/bootstrap-sweetalert.js"></script>
 
 
     <script>
@@ -581,8 +515,45 @@ and open the template in the editor.
                 Site.run();
             });
 
-        })(document, window, jQuery);
+            // Pagination
+            // ----------
+            (function() {
+                $('#examplePagination').footable();
+                $('#exampleShow').change(function(e) {
+                    e.preventDefault();
+                    var pagesize = $(this).find('option:selected').val();
+                    $('#examplePagination').data('page-size', pagesize);
+                    $('#examplePagination').trigger('footable_initialized');
+                });
+            })();
+//
+//            $('.exampleWarningCancel').on("click", function() {
+//                swal({
+//                        title: "You will delete this item",
+//                        text: "You will not be able to recover this item again",
+//                        type: "warning",
+//                        showCancelButton: true,
+//                        confirmButtonColor: '#DD6B55',
+//                        confirmButtonText: "No, cancel please !",
+//                        cancelButtonText: 'Yes, delete it !',
+//                        closeOnConfirm: false,
+//                        closeOnCancel: false
+//                    },
+//                    function(isConfirm) {
+//                        if (isConfirm) {
+//
+//                            swal("Cancelled", "Your item is safe :)",
+//                                "error");
+//                        } else {
+////                            swal("Deleted ",
+////                                "Your item has been deleted ",
+////                                "success");
+//                          deleteCompany();
+//                        }
+//                    });
+//            });
 
+        })(document, window, jQuery);
     </script>
 
 </body>
