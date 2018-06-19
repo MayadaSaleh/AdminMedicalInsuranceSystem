@@ -14,7 +14,7 @@ function findAllSuggestions() {
     success: function (data) { 
         $.each(data.suggestions, function(index, element) {
             var suggest_id = element.suggestId;
-           $("#insertRow").append('<tr><td><a href="../suggestion.html/suggestion_details.html?id='+suggest_id+'">'+element.suggestId+"</a></td><td>"+element.description+"</td></tr>");
+           $("#insertRow").append('<tr><td><a href="../suggestion.html/suggestion_details.html?id='+suggest_id+'">'+element.medicalServiceNameEn+"</a></td><td>"+element.suggestId+"</td><td>"+element.medicalType+"</td><td>"+element.date+"</td></tr>");
         });
     }
 });

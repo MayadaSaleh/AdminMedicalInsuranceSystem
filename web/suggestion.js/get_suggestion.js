@@ -14,10 +14,33 @@ function findSuggest() {
     url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get/suggestionID='+c, 
     dataType: 'json',
     success: function (data) { 
-           $("#insertRow").append("<tr><td>"+c+"</td><td>"+data.description+"</td><td>"+data.medicalType+"</td>\n\
-<td>"+data.address+"</td><td>"+data.contactPhone+"</td><td>"+data.supervisor+"</td><td>"+data.date+"</td><td>"+data.medicalServiceNameAr+"</td>\n\
-<td>"+data.medicalServiceNameEn+"</td><td>"+data.employeeId+"</td><td>"+data.longitude+"</td><td>"+data.latitude+"</td></tr>");
-      
+           $("#item1").append(data.suggestId);
+           $("#item2").append(data.employeeId);
+           $("#item3").append(data.date);
+           $("#item4").append(data.medicalServiceNameEn);
+           $("#item5").append(data.medicalServiceNameAr);
+           switch (data.medicalType)
+           {
+              case 1:
+               $("#item6").append("hospital");
+               break;
+             case 2:
+                 $("#item6").append("Clinic");
+               break;
+               case 3:
+                 $("#item6").append("Pharmacy");
+               break; 
+               case 4:
+                 $("#item6").append("Lab");
+               break; 
+               
+            }
+           $("#item7").append(data.supervisor);
+           $("#item8").append(data.contactPhone);
+           $("#item9").append(data.latitude);
+           $("#item10").append(data.longitude);
+           $("#item11").append(data.address);
+           $("#item12").append(data.description);
     }
 });
 }
