@@ -31,12 +31,12 @@ function dispalyEmployee() {
 
                 document.getElementById("name").value = response.employeePojo.name;
                 document.getElementById("address").value = response.employeePojo.address;
-                document.getElementById("job").value = response.employeePojo.password;
-                document.getElementById("password").value = response.employeePojo.startDate;
-                document.getElementById("startDate").value = response.employeePojo.endDate;
-                document.getElementById("endDate").value = response.employeePojo.packageType;
-                document.getElementById("packageType").value = response.employeePojo.phones[0];
-                document.getElementById("phone1").value = response.employeePojo.email;
+                document.getElementById("job").value = response.employeePojo.job;
+                document.getElementById("password").value = response.employeePojo.password;
+                document.getElementById("startDate").value = response.employeePojo.startDate;
+                document.getElementById("endDate").value = response.employeePojo.endDate;
+                document.getElementById("packageType").value = response.employeePojo.packageType;
+                document.getElementById("phone1").value = response.employeePojo.phones[0];
 
 //
 //                $("#name").text(response.employeePojo.name);
