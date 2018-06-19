@@ -16,7 +16,7 @@ function getEmployee() {
 
 //var requestData = $('#employeeId').val();
     $.ajax({
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
         method: 'get',
         data: {},
         dataType: 'json',

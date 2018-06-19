@@ -15,7 +15,7 @@ function dispalyEmployee() {
 
 //var requestData = $('#employeeId').val();
     $.ajax({
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -73,7 +73,7 @@ function updateEmployeeInCompany() {
         console.log("in update id= "+requestIDD);
 
     $.ajax({
-        url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestIDD,
+        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestIDD,
         type: 'PUT',
         data: JSON.stringify(eval({"id": requestIDD, "email": requestEmail, "name": requestName, "address": requestAddress, "password": requestPassword, "job": requestJob, "image": requestImage, "companyId": requestCompanyID, "startDate": requestStartDate, "endDate": requestEndDate, "packageType": requestPackageType, "phones": [requestPhone1, requestPhone2, requestPhone3]})),
         contentType: "application/json; charset=utf-8",
@@ -86,7 +86,7 @@ function updateEmployeeInCompany() {
             }
             
             
-            window.location.href = "http://localhost:4048/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + transferedCompanyId;
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + transferedCompanyId;
         },
         error: function (err) {
             alert(err);
