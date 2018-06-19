@@ -1,81 +1,566 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html class="no-js before-run" lang="en">
+
     <head>
-        <title>TODO supply a title</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <meta name="description" content="bootstrap admin template">
+        <meta name="author" content="">
+
+        <title>Consolto</title>
+
+        <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+        <link rel="stylesheet" href="../assets/css/site.css">
+
+        <link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">
+        <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="../assets/vendor/footable/footable.core.css">
+
+        <link rel="stylesheet" href="../assets/css/pages/companies.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../assets/fonts/fontawesome-free/web-fonts-with-css/css/fontawesome-all.css">
+
+        <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+        <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+
+        <!--[if lt IE 9]>
+    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+        <!--[if lt IE 10]>
+    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+    <script src="../assets/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+        <!-- Scripts -->
+        <script src="../assets/vendor/modernizr/modernizr.js"></script>
+        <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+        <script>
+            Breakpoints();
+        </script>
+<!--        <script src="../jquery-1.7.1.min.js"></script>
+        <script src="../employee.js/getCompanyEmployees.js"></script>
+        <script src="../employee.js/updateEmployee.js"></script>-->
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                    <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search" data-toggle="collapse">
+                    <span class="sr-only">Toggle Search</span>
+                    <i class="icon wb-search" aria-hidden="true"></i>
+                </button>
+                <div class="navbar-brand navbar-brand-center site-gridmenu-toggle">
+                    <img class="navbar-brand-logo" src="../assets/images/logo.png" title="Consolto">
+                    <span class="navbar-brand-text"> Consolto</span>
+                </div>
+            </div>
+
+            <div class="navbar-container container-fluid">
+                <!-- Navbar Collapse -->
+                <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                    <!-- Navbar Toolbar -->
+                    <ul class="nav navbar-toolbar">
+                        <li class="hidden-float" id="toggleMenubar">
+                            <a data-toggle="menubar" href="#" role="button">
+                                <i class="icon hamburger hamburger-arrow-left">
+                                    <span class="sr-only">Toggle menubar</span>
+                                    <span class="hamburger-bar"></span>
+                                </i>
+                            </a>
+                        </li>
+                        <li class="hidden-xs" id="toggleFullscreen">
+                            <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                            </a>
+                        </li>
+                        <!--                        <li class="hidden-float">
+                                                    <a class="icon wb-search" data-toggle="collapse" href="#site-navbar-search" role="button">
+                                                        <span class="sr-only">Toggle Search</span>
+                                                    </a>
+                                                </li>-->
+                    </ul>
+                    <!-- End Navbar Toolbar -->
+
+                    <!-- Navbar Toolbar Right -->
+                    <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                        <!--                        <li class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
+                                                        <span class="flag-icon flag-icon-us"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li role="presentation">
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                <span class="flag-icon flag-icon-gb"></span> English</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                <span class="flag-icon flag-icon-fr"></span> French</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                <span class="flag-icon flag-icon-cn"></span> Chinese</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                <span class="flag-icon flag-icon-de"></span> German</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                <span class="flag-icon flag-icon-nl"></span> Dutch</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                        
+                                                <li class="dropdown">
+                                                    <a data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="slide-bottom" role="button">
+                                                        <i class="icon wb-bell" aria-hidden="true"></i>
+                                                        <span class="badge badge-danger up">5</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                                                        <li class="dropdown-menu-header" role="presentation">
+                                                            <h5>NOTIFICATIONS</h5>
+                                                            <span class="label label-round label-danger">New 5</span>
+                                                        </li>
+                        
+                                                        <li class="list-group" role="presentation">
+                                                            <div data-role="container">
+                                                                <div data-role="content">
+                                                                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                                                        <div class="media">
+                                                                            <div class="media-left padding-right-10">
+                                                                                <i class="icon wb-order bg-red-600 white icon-circle" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h6 class="media-heading">A new order has been placed</h6>
+                                                                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">5 hours ago</time>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                                                        <div class="media">
+                                                                            <div class="media-left padding-right-10">
+                                                                                <i class="icon wb-user bg-green-600 white icon-circle" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h6 class="media-heading">Completed the task</h6>
+                                                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">2 days ago</time>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                                                        <div class="media">
+                                                                            <div class="media-left padding-right-10">
+                                                                                <i class="icon wb-settings bg-red-600 white icon-circle" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h6 class="media-heading">Settings updated</h6>
+                                                                                <time class="media-meta" datetime="2015-06-11T14:05:00+08:00">2 days ago</time>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                                                        <div class="media">
+                                                                            <div class="media-left padding-right-10">
+                                                                                <i class="icon wb-calendar bg-blue-600 white icon-circle" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h6 class="media-heading">Event started</h6>
+                                                                                <time class="media-meta" datetime="2015-06-10T13:50:18+08:00">3 days ago</time>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                                                        <div class="media">
+                                                                            <div class="media-left padding-right-10">
+                                                                                <i class="icon wb-chat bg-orange-600 white icon-circle" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h6 class="media-heading">Message received</h6>
+                                                                                <time class="media-meta" datetime="2015-06-10T12:34:48+08:00">3 days ago</time>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dropdown-menu-footer" role="presentation">
+                                                            <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
+                                                                <i class="icon wb-settings" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="javascript:void(0)" role="menuitem">
+                                                                All notifications
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>-->
+                        <li class="dropdown">
+                            <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
+                                <span class="avatar avatar-online">
+                                    <img src="../assets/portraits/5.jpg" alt="...">
+                                    <i></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <!--                                <li role="presentation">
+                                                                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                                                                </li>
+                                                                <li role="presentation">
+                                                                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+                                                                </li>
+                                                                <li role="presentation">
+                                                                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+                                                                </li>
+                                                                <li class="divider" role="presentation"></li>-->
+                                <li role="presentation">
+                                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navbar Toolbar Right -->
+                </div>
+                <!-- End Navbar Collapse -->
+
+                <!-- Site Navbar Seach -->
+                <!--                <div class="collapse navbar-search-overlap" id="site-navbar-search">
+                                    <form role="search">
+                                        <div class="form-group">
+                                            <div class="input-search">
+                                                <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                                                <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                                                <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search" data-toggle="collapse" aria-label="Close"></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>-->
+                <!-- End Site Navbar Seach -->
+            </div>
+        </nav>
+        <div class="site-menubar">
+            <div class="site-menubar-body">
+                <div>
+                    <div>
+                        <ul class="site-menu">
+                            <li class="site-menu-category"></li>
+
+                            <li class="site-menu-item ">
+                                <a href="index.html" data-slug="dashboard">
+                                    <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Dashboard</span>
+                                    <div class="site-menu-badge">
+                                        <span class="badge badge-success">2</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="site-menu-item  active">
+                                <a href="companies.html" data-slug="layout">
+                                    <i class="site-menu-icon fas fa-building" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Companies</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item ">
+                                <a href="medicalservices.html" data-slug="page">
+                                    <i class="site-menu-icon fas fa-user-md" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Medical Services</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="suggestion.html" data-slug="uikit">
+                                    <i class="site-menu-icon fas fa-comments" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Suggestion</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-menubar-footer">
+                <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Settings">
+                    <span class="icon wb-settings" aria-hidden="true"></span>
+                </a>
+
+                <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
+                    <span class="icon wb-power" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+        <!-- Page -->
+        <div class="page  formPage">
+            <div class="page-content">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="page-title">Update Empolyee</h1>
+                            <ol class="breadcrumb ">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="companies.html">Companies</a></li>
+                                <li><a href="perCompany.html">Company Details</a></li>
+                                <li class="active">Update Empolyee</li>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <form action="">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-user" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="name"  class="form-control" placeholder="Employee Name">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon input-group-file">
+                                        <span class=" input-group-btn">
+                                            <span class="btn btn-file">
+                                                <i class="icon wb-upload" aria-hidden="true"></i>
+                                                <input type="file" id="fileButton">
+                                            </span>
+                                        </span>
+
+
+                                        <!--<input type="file" id="fileButton"/>-->
+
+                                        <progress value="0" max="100" id="progress">0%</progress><br/><br/>
+                                        <input type="text" id="urlImage" name="urlImage"/> </br>   
+                                        <button type="button" id="fileInput" value="upload"></br>
+                                        </button>        
+                                        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+                                        <script src="../employee.js/uploadImage.js"></script>
+
+                                        <!--<input type="text" class="form-control" readonly="path" placeholder="Employee Picture">-->
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="employeeId"  class="form-control" placeholder="Employee ID" disabled="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-briefcase" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="job" class="form-control" placeholder="Employee Job">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-wallet" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="packageType" class="form-control" placeholder="Employee Package">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="phone1" class="form-control" placeholder="Employee Phone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-envelope" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="email" class="form-control" placeholder="Employee Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="startDate" class="form-control" placeholder="Start Date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="endDate" class="form-control" placeholder="End Date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="input-group input-group-icon">
+                                                                <span class="input-group-addon">
+                                                                    <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
+                                                                </span>
+                                                                <input type="text" id="password"  class="form-control" placeholder="Employee Password">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                        <!--                            <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="input-group input-group-icon">
+                                                                <span class="input-group-addon">
+                                                                    <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
+                                                                </span>
+                                                                <input type="text" class="form-control" placeholder="Employee Long">
+                                                            </div>
+                                                        </div>
+                                                    </div>-->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group input-group-icon">
+                                        <span class="input-group-addon">
+                                            <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
+                                        </span>
+                                        <input type="text" id="address" class="form-control" placeholder="Employee Location">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="actionBtn text-center">
+                                <button type="button" class="btn btn-default btn-outline btn-round" id="updateInsertEmployee"  onclick="updateEmployeeInCompany()">
+                                    <i class="icon fas fa-check" aria-hidden="true"></i>
+                                    <span class="">DONE</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Page -->
+
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <span class="site-footer-legal">© 2018 Consolto</span>
+        </footer>
+
+        <!-- Core  -->
+        <script src="../assets/vendor/jquery/jquery.js"></script>
+        <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+        <script src="../assets/vendor/animsition/jquery.animsition.js"></script>
+        <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+        <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+        <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+        <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+        <script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+        <script src="../assets/vendor/footable/footable.all.min.js"></script>
+
+        <!-- Plugins -->
+        <script src="../assets/vendor/switchery/switchery.min.js"></script>
+        <script src="../assets/vendor/intro-js/intro.js"></script>
+        <script src="../assets/vendor/screenfull/screenfull.js"></script>
+        <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+
+        <!-- Scripts -->
+        <script src="../assets/js/core.js"></script>
+        <script src="../assets/js/site.js"></script>
+
+        <script src="../assets/js/sections/menu.js"></script>
+        <script src="../assets/js/sections/menubar.js"></script>
+        <script src="../assets/js/sections/sidebar.js"></script>
+
+        <script src="../assets/js/configs/config-colors.js"></script>
+        <script src="../assets/js/configs/config-tour.js"></script>
+
+        <script src="../assets/js/components/asscrollable.js"></script>
+        <script src="../assets/js/components/animsition.js"></script>
+        <script src="../assets/js/components/slidepanel.js"></script>
+        <script src="../assets/js/components/switchery.js"></script>
+        <script src="../assets/js/components/bootstrap-datepicker.js"></script>
         <script src="../jquery-1.7.1.min.js"></script>
         <script src="../employee.js/getCompanyEmployees.js"></script>
         <script src="../employee.js/updateEmployee.js"></script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+        <script>
+            (function (document, window, $) {
+                'use strict';
 
-    <body style="font-family:Arial">
-        <table>
-            <tr>
-                <td>id</td>
-                <td><input type="text" id="employeeId" disabled=""/></td>
-            </tr>
-            <tr>
-                <td>name</td>
-                <td><input type="text" id="name" /></td>
-            </tr>
-            <tr>
-                <td>email</td>
-                <td><input type="text" id="email" /></td>
-            </tr>
-            <tr>
-                <td>addressss</td>
-                <td><input type="text" id="address" /></td>
-            </tr>
-            <tr>
-                <td>job</td>
-                <td><input type="text" id="job" /></td>
-            </tr>
-            <tr>
-                <td>password</td>
-                <td><input type="text" id="password" /></td>
-            </tr>
-         
-            <tr>
-                <td>start Date </td>
-                <td><input type="text" id="startDate" /></td>
-            </tr> 
-            <tr>
-                <td>end Date</td>
-                <td><input type="text" id="endDate" /></td>
-            </tr> 
-            <tr>
-                <td>package Type</td>
-                <td><input type="text" id="packageType" /></td>
-            </tr> 
-            <tr>
-                <td>Phones</td>
-                <td><input type="text" id="phone1" /></td>
-                <td><input type="text" id="phone2" /></td>
-                <td><input type="text" id="phone3" /></td>
-            </tr>   
-            
-            
-             <input type="file" id="fileButton"/>
+                var Site = window.Site;
+                $(document).ready(function () {
+                    Site.run();
+                });
 
-            <progress value="0" max="100" id="progress">0%</progress><br/><br/>
-            <input type="text" id="urlImage" name="urlImage"/> </br>   
-            <button type="button" id="fileInput" value="upload"></br>
-            </button>        
-            <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-            <script src="../employee.js/uploadImage.js"></script>
-            
 
-        </table>
-        <input type="button" id="updateInsertEmployee" value="Update Employee" onclick="updateEmployeeInCompany()">
-        <br /><br />
-        <div id="resultDiv">
-        </div>
+                //upload Image
+                $(".input-group-file .input-group-btn input[type=file]").on("change", function () {
+                    var filePath = this.files[0].name;
+                    var placeHolderChange = $('.input-group-file input[type=text]').attr("placeholder", filePath);
+                });
+            })(document, window, jQuery);
+        </script>
+
     </body>
 
 </html>

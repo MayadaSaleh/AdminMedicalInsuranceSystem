@@ -22,7 +22,7 @@ function addAdminApi() {
 
 
             } else {
-                alert("errore is  " + userName + " insertion");
+                alert("error is  " + userName + " insertion");
                 window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
             }
 

@@ -8,15 +8,15 @@
 //}
 
 
- var str = window.location.href;
-    var url = new URL(str );
-     c = url.searchParams.get("companyId");
+var str = window.location.href;
+var url = new URL(str);
+c = url.searchParams.get("companyId");
 
 function insertEmployeeInCompany() {
     //$(document).ready(function () {
     //  $('#btnInsertEmployee').click(function () {
-    
-     console.log("id of company in employee");
+
+    console.log("id of company in employee");
 
     var resultElement = $('#resultDiv');
     var requestName = $('#name').val();
@@ -26,7 +26,7 @@ function insertEmployeeInCompany() {
     var requestPassword = $('#password').val();
     var requestImage = $('#urlImage').val();
 //    var requestCompanyID = $('#companyId').val();
-    var requestCompanyID =c;
+    var requestCompanyID = c;
     var requestStartDate = $('#startDate').val();
     var requestEndDate = $('#endDate').val();
     var requestPackageType = $('#packageType').val();
@@ -44,17 +44,20 @@ function insertEmployeeInCompany() {
         success: function (response) {
             if (response.message != null) {
                 resultElement.html(response.status);
-               // window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html";
+                // window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html";
 
             } else {
                 resultElement.html("error in Insertinng employee");
             }
 
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId="+requestCompanyID;
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + requestCompanyID;
 
         },
         error: function (err) {
-            alert(err);
+            console.log("in insert error");
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + requestCompanyID;
+
+            // alert(err);
         }
     });
     //     });

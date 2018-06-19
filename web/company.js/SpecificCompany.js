@@ -90,6 +90,7 @@ function deleteEmployee() {
 
     $.ajax({
         type: 'DELETE',
+        
         url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
@@ -97,7 +98,7 @@ function deleteEmployee() {
    //window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('error in delete Employee');
+         //   alert('error in delete Employee');
         }
     });
      window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;

@@ -24,20 +24,20 @@ function getEmployee() {
             if (response.responseMessage.status == true) {
                 resultElement.html(response.employeePojo.id + " " + response.employeePojo.email + " " + response.responseMessage.message);
 
-                document.getElementById("employee_id").value = response.employeePojo.id;
-                document.getElementById("email").value = response.employeePojo.email;
-                document.getElementById("name").value = response.employeePojo.name;
-                document.getElementById("address").value = response.employeePojo.address;
-                document.getElementById("job").value = response.employeePojo.job;
-                document.getElementById("password").value = response.employeePojo.password;
-                document.getElementById("startDate").value = response.employeePojo.startDate;
-                document.getElementById("endDate").value = response.employeePojo.endDate;
-                document.getElementById("packageType").value = response.employeePojo.packageType;
-                document.getElementById("phone1").value = response.employeePojo.phones[0];
-                document.getElementById("phone2").value = response.employeePojo.phones[1];
-                document.getElementById("phone3").value = response.employeePojo.phones[2];
-                document.getElementById("image").src = response.employeePojo.image;
+                console.log(response.employeePojo.email);
 
+                $("#employee_id").text(response.employeePojo.id);
+                $("#email").text(response.employeePojo.email);
+                $("#name").text(response.employeePojo.name);
+                $("#nameHeader").text(response.employeePojo.name);
+                $("#address").text(response.employeePojo.address);
+                $("#job").text(response.employeePojo.job);
+                $("#password").text(response.employeePojo.password);
+                $("#startDate").text(response.employeePojo.startDate);
+                $("#endDate").text(response.employeePojo.endDate);
+                $("#packageType").text(response.employeePojo.packageType);
+                $("#phone1").text(response.employeePojo.phones[0]);
+                document.getElementById("image").src = response.employeePojo.image;
 
             } else {
                 resultElement.html("error in Loading data");
