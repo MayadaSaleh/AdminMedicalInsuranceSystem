@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group name="UI">
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/update.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/assets/vendor/bootstrap-sweetalert/sweet-alert.min.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/UpdateCompany.html</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/companies.html</file>
             <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/insert.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/getAll.js</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/company.html</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/SpecificCompany.html</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/company.js</file>
             <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/InsertCompany.html</file>
-=======
-        <group>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/admin.js/welcomePage.js</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/admin.js/login.js</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/admin.html/welcomePage.html</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/admin.html/login.html</file>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
->>>>>>> fd21ce82e476e59e716ec3a08701be6aaa7ec9a5
-=======
->>>>>>> 9ed96fe0b7f95857a75c00a0b78c21f32396a1c2
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/getAllCompany.html</file>
+            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/assets/vendor/bootstrap-sweetalert/sweet-alert.js</file>
         </group>
     </open-files>
 </project-private>

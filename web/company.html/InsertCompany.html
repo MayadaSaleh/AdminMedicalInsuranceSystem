@@ -4,6 +4,67 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<!--<html>
+    <head>
+        <script type="text/javascript" src="../company.js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../company.js/insert.js"></script>
+    </head>
+    <body style="font-family:Arial">
+        
+        <form name="insert" id="apply" action="getAllCompany.html">   
+      <table>
+      <!--        <tr>
+            <td>name</td>
+            <td><input type="text" id="companyName" pattern="[aA-zZ]{2,20}" name="Name" required/></td>
+        </tr>
+        <tr>
+               <td>email</td>
+               <td><input type="email" id="companyEmail" required /></td>
+        </tr>
+        <tr>
+             <td>latitude</td>
+             <td><input type="number" id="companyLat" min="0" step="any" required /></td>
+        </tr>
+          <tr>
+             <td>longitude</td>
+             <td><input type="number" min="0" step="any" id="companyLong" required/></td>
+        </tr>
+          <tr>
+             <td>address</td>
+            <td><input type="text" id="companyAdd" required/></td>
+        </tr>
+          <tr>
+             <td>package Type</td>
+             <td><input type="number" min="0" step="any" id="companyPackage"  required/></td>
+        </tr> 
+           <tr>
+             <td>start Date</td>
+            <td><input type="date" id="companyStartDate"  required/></td>
+        </tr> 
+           <tr>
+             <td>end date</td>
+            <td><input type="date" id="companyEndDate"  required/></td>
+        </tr> 
+        <tr>
+             <td>CEO</td>
+            <td><input type="text" id="companyCeo" pattern="[A-Za-z]" required /></td>
+        </tr> 
+            <tr>
+             <td>Phones</td>
+             <td><input type="number" id="companyPhone1" required/></td>
+             <td><input type="number" id="companyPhone2"/></td>
+             <td><input type="number" id="companyPhone3"/></td>
+        </tr>  
+    </table>
+         
+            <button type="submit"  onclick="validate()" id="btnGetCompany">Submit</button>
+    </form>-->
+<!--    <br /><br />
+    <div id="resultDiv">
+    </div> 
+    </body>
+</html>-->
+
 <html class="no-js before-run" lang="en">
 
 <head>
@@ -105,17 +166,17 @@ and open the template in the editor.
                                 <span class="sr-only">Toggle fullscreen</span>
                             </a>
                     </li>
-                    <li class="hidden-float">
+<!--                    <li class="hidden-float">
                         <a class="icon wb-search" data-toggle="collapse" href="#site-navbar-search" role="button">
                                 <span class="sr-only">Toggle Search</span>
                             </a>
-                    </li>
+                    </li>-->
                 </ul>
                 <!-- End Navbar Toolbar -->
 
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="dropdown">
+<!--                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
                                 <span class="flag-icon flag-icon-us"></span>
                             </a>
@@ -224,7 +285,7 @@ and open the template in the editor.
                                     </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown">
                         <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
                                 <span class="avatar avatar-online">
@@ -233,7 +294,7 @@ and open the template in the editor.
                                 </span>
                             </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation">
+<!--                            <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
                             </li>
                             <li role="presentation">
@@ -242,7 +303,7 @@ and open the template in the editor.
                             <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
                             </li>
-                            <li class="divider" role="presentation"></li>
+                            <li class="divider" role="presentation"></li>-->
                             <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
                             </li>
@@ -254,7 +315,7 @@ and open the template in the editor.
             <!-- End Navbar Collapse -->
 
             <!-- Site Navbar Seach -->
-            <div class="collapse navbar-search-overlap" id="site-navbar-search">
+<!--            <div class="collapse navbar-search-overlap" id="site-navbar-search">
                 <form role="search">
                     <div class="form-group">
                         <div class="input-search">
@@ -265,7 +326,7 @@ and open the template in the editor.
                     </div>
                 </form>
             </div>
-            <!-- End Site Navbar Seach -->
+             End Site Navbar Seach -->
         </div>
     </nav>
     <div class="site-menubar">
@@ -332,8 +393,14 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
+  
+            
+            
+            
+            
             <div class="panel">
-                <form action="">
+                <form name="insert" id="apply" action="companies.html">
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -341,21 +408,24 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-building" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company Name">
+                                    <input type="text" id="companyName" class="form-control" placeholder="Company Name" name="Name" required />
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company ID">
+                                    <input type="email" id="companyEmail" required class="form-control" placeholder="Company email" />
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -363,7 +433,7 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user-tie" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company CEO Name">
+                                    <input type="text" id="companyCeo" required class="form-control" placeholder="Company CEO Name">
                                 </div>
                             </div>
                         </div>
@@ -373,11 +443,12 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-wallet" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company Package">
+                                    <input type="number" min="0" step="any" id="companyPackage"  required class="form-control" placeholder="Company Package">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -385,7 +456,7 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Start Date">
+                                    <input type="text" id="companyStartDate" required class="form-control" placeholder="Start Date">
                                 </div>
                             </div>
                         </div>
@@ -395,11 +466,12 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="End Date">
+                                    <input type="text" id="companyEndDate"  required class="form-control" placeholder="End Date">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -407,7 +479,7 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company Lat">
+                                    <input type="number" id="companyLat" min="0" step="any" required class="form-control" placeholder="Company Lat">
                                 </div>
                             </div>
                         </div>
@@ -417,33 +489,40 @@ and open the template in the editor.
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company Long">
+                                    <input type="number" min="0" step="any" id="companyLong" required class="form-control" placeholder="Company Long">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Company Location">
+                                    <input  type="text" id="companyAdd" required class="form-control" placeholder="Company Location">
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" id="companyPhone1" required class="form-control" placeholder="Company phone" />
+                                </div>
+                            </div>
+                        </div> 
                     </div>
                     <div class="row">
                         <div class="actionBtn text-center">
-                            <a class="btn btn-default btn-outline btn-round" href="" target="_blank">
+                            <button class="btn btn-default btn-outline btn-round"  type="submit"  onclick="validate()" id="btnGetCompany">
                                         <i class="icon fas fa-check" aria-hidden="true"></i>
                                         <span class="">DONE</span>
-                                    </a>
-
-
-
+                            </button>
                         </div>
                     </div>
                 </form>

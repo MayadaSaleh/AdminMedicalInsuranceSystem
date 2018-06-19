@@ -14,7 +14,6 @@ function dispalyCompany() {
                     dataType: 'json',
                     success: function (response) {
                           document.getElementById("companyName").value = response.companyObject.name; 
-                           console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeee dataaaaaaa"+response.companyObject.name);
                            document.getElementById("companyEmail").value = response.companyObject.email;
                            document.getElementById("companyLat").value = response.companyObject.latitude;
                            document.getElementById("companyLong").value = response.companyObject.longitude;
@@ -22,19 +21,9 @@ function dispalyCompany() {
                           document.getElementById("companyPackage").value =response.companyObject.packageType;
                            document.getElementById("companyStartDate").value = response.companyObject.startDate;
                            document.getElementById("companyEndDate").value = response.companyObject.endDate;
-                           document.getElementById("companyCeo").value = response.companyObject.ceo;
-                            document.getElementById("companyInsuranceId").value = response.companyObject.medicalInsuranceId;
-                            if(response.companyObject.phones[0].length > 0 || response.companyObject.phones[1].length > 0 || response.companyObject.phones[2].length > 0)
-                            {
-                            document.getElementById("companyPhone1").type="number";
-                            document.getElementById("companyPhone2").type="number";
-                            document.getElementById("companyPhone3").type="number";
+                           document.getElementById("companyCeo").value = response.companyObject.ceo;            
                           document.getElementById("companyPhone1").value = response.companyObject.phones[0];
-                           document.getElementById("companyPhone2").value = response.companyObject.phones[1];
-                           document.getElementById("companyPhone3").value = response.companyObject.phones[2];
-                       }
-                      
-                    },
+                       },
                     error: function (err) {
                         alert(err);
                     }
@@ -51,15 +40,12 @@ function updateCompany(){
                 var requestStartDate = $('#companyStartDate').val();
                var requestEndDate= $('#companyEndDate').val();
                 var requestCeo = $('#companyCeo').val();
-                var requestInsuranceId = $('#companyInsuranceId').val();
                 var requestPhone1 = $('#companyPhone1').val();
-                var requestPhone2 = $('#companyPhone2').val();
-                var requestPhone3 = $('#companyPhone3').val();
     
     $.ajax({
                     url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/update',
                     type: 'PUT',
-                    data:JSON.stringify(eval({"id":c, "name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":requestInsuranceId, "phones":[requestPhone1, requestPhone2,requestPhone3]})),
+                    data:JSON.stringify(eval({"id":c, "name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":1, "phones":[requestPhone1]})),
                     contentType: "application/json; charset=utf-8",
                     dataType:'json',
                     success: function (response) {
