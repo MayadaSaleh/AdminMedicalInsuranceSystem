@@ -10,21 +10,19 @@ function validate(){
                var requestEndDate= $('#companyEndDate').val();
                 var requestCeo = $('#companyCeo').val();
                 var requestPhone1 = $('#companyPhone1').val();
-                var requestPhone2 = $('#companyPhone2').val();
-                var requestPhone3 = $('#companyPhone3').val();
-  insert(requestName,requestEmail,requestLat,requestLong,requestAdd,requestPackage,requestStartDate,requestEndDate,requestCeo,requestPhone1,requestPhone2,requestPhone3);
+  insert(requestName,requestEmail,requestLat,requestLong,requestAdd,requestPackage,requestStartDate,requestEndDate,requestCeo,requestPhone1);
            
     
 }
 
 
 
-function insert(requestName,requestEmail,requestLat,requestLong,requestAdd,requestPackage,requestStartDate,requestEndDate,requestCeo,requestPhone1,requestPhone2,requestPhone3) {
+function insert(requestName,requestEmail,requestLat,requestLong,requestAdd,requestPackage,requestStartDate,requestEndDate,requestCeo,requestPhone1) {
  
                 $.ajax({
                     url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/insert',
                     type: 'POST',
-                    data:JSON.stringify(eval({"name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":1, "phones":[requestPhone1, requestPhone2, requestPhone3]})),
+                    data:JSON.stringify(eval({"name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":1, "phones":[requestPhone1]})),
                     contentType: "application/json; charset=utf-8",
                     dataType:'json',
                     success: function (response) {

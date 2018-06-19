@@ -62,8 +62,6 @@ function getCompany() {
                 $('#ceo').text(response.companyObject.ceo);
                 $('#medicalInsuranceId').text(response.companyObject.medicalInsuranceId);
                 $('#phone1').text(response.companyObject.phones[0]);
-                $('#phone2').text(response.companyObject.phones[1]);
-                $('#phone3').text(response.companyObject.phones[2]);
 //                requestId =c;
 
      console.log("id of comapny c isssssssss"+detailCompanyId);
