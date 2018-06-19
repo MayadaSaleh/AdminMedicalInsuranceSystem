@@ -1,3 +1,35 @@
+@font-face {
+    font-family: bold;
+    src: url(../../fonts/bold.ttf);
+}
+
+@font-face {
+    font-family: blackf;
+    src: url(../../fonts/blackf.ttf);
+}
+
+@font-face {
+    font-family: light;
+    src: url(../../fonts/light.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(../../fonts/medium.ttf);
+}
+
+@font-face {
+    font-family: regular;
+src: url(../../fonts/regular.ttf);
+}
+
+@font-face {
+    font-family: thin;
+    src: url(../../fonts/thin.ttf);
+}
+
+
+
 .page .page-content .page-header .page-title {
     margin-bottom: 10px;
     font-family: bold;
@@ -284,7 +316,7 @@ h4.example-title {
     margin-top: 15px !important;
 }
 
-.media-heading {
+.media-heading , .panel-title {
     font-family: medium;
 }
 
