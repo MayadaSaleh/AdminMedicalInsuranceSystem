@@ -8,7 +8,7 @@ function dispalyCompany() {
      c = url.searchParams.get("companyId");
 
     $.ajax({
-    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/getCompany/'+c,
+    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getCompany/'+c,
                     method: 'get',
                     data: {},
                     dataType: 'json',
@@ -43,14 +43,14 @@ function updateCompany(){
                 var requestPhone1 = $('#companyPhone1').val();
     
     $.ajax({
-                    url: 'http://localhost:4048/MedicalInsuranceSystem/api/version1/company/update',
+                    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/update',
                     type: 'PUT',
                     data:JSON.stringify(eval({"id":c, "name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":1, "phones":[requestPhone1]})),
                     contentType: "application/json; charset=utf-8",
                     dataType:'json',
                     success: function (response) {
 //                      
-                          window.location.href="http://localhost:4048/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
+                          window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
                     },
                     error: function (err) {
                     }
