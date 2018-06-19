@@ -22,7 +22,7 @@ function findAll() {
         dataType: "json", // data type of response
         success: function (data) {
             $.each(data.pharmacies, function (index, element) {
-                $("#insertRow").append('<tr><td><a href="../pharmacy.html/serviceDetails.html?id=' + element.id + '">' + element.id + "</a></td><td>" + element.nameEn + "</td><td>" + element.startDate + "</td><td>" + element.endDate + "</td><td>" + element.rate + "</td><td>" + element.address + '</td><td><a href="perService.html?id=' + element.id + '&DeleteFlag=true" type="button" class="exampleWarningCancel">' + '<i class="fas fa-trash-alt"></i>' + "</a></td>\n\</tr>");
+                $("#insertRow").append('<tr><td><a href="../pharmacy.html/serviceDetails.html?id=' + element.id + '">' + element.id + "</a></td><td>" + element.nameEn + "</td><td>" + element.startDate + "</td><td>" + element.endDate + "</td><td>" + element.rate + "</td><td>" + element.address + '</td><td><a href="perService.html?id=' + element.id + '&DeleteFlag=true" type="button" class="exampleWarningCancel">' + '<i class="fas fa-trash-alt"></i>' + '</a></td><td><a href="serviceForm.html?id=' + element.id +'">' + '<i class="fas fa-pencil-alt"></i>'+"</a></td>\n\</tr>");
             });
         }
         ,
