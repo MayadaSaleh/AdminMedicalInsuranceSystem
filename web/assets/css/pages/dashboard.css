@@ -1,0 +1,79 @@
+@font-face {
+    font-family: bold;
+    src: url(../../fonts/bold.ttf);
+}
+
+@font-face {
+    font-family: blackf;
+    src: url(../../fonts/blackf.ttf);
+}
+
+@font-face {
+    font-family: light;
+    src: url(../../fonts/light.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(../../fonts/medium.ttf);
+}
+
+@font-face {
+    font-family: regular;
+src: url(../../fonts/regular.ttf);
+}
+
+@font-face {
+    font-family: thin;
+    src: url(../../fonts/thin.ttf);
+}
+
+
+
+.page-title{
+    font-family: bold;
+/*    margin: 30px 0px;*/
+}
+
+.page .page-content .page-header{
+/*        margin: 20px 0px !important;*/
+}
+.height-80{
+    height: 80px;
+}
+
+.widget-footer{
+/*    background-color: #a9b4bb;*/
+        border-top: 1px solid #f6f6f6;
+}
+.counter {
+    margin-top: 8px;
+}
+.counter-label {
+/*    color: white*/
+}
+
+.counter > .counter-number, .counter .counter-number-group{
+    color:#21292e;
+    font-family: bold;
+    font-size: 25px;
+}
+
+.subTitle{
+    font-family: light;
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 20px;
+}
+.chartExample{
+    display: inline-block
+}
+.pie-progress{
+    margin: 30px 0px;
+}
+.pie-progress-150{
+    max-width: 150px;
+}
+.feedbackSection{
+    padding:30px 20px;
+}

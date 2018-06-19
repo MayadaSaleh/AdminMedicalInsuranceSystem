@@ -18,12 +18,12 @@ function addAdminApi() {
             if (response.status == true) {
                 //resultElement.html(response.status);
                 alert("admin " + userName + " is inserted successfuly");
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
 
 
             } else {
                 alert("error is  " + userName + " insertion");
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
             }
 
 
@@ -31,7 +31,7 @@ function addAdminApi() {
         error: function (err) {
            // alert(err);
             alert("errorm is  " + userName + " insertion");
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/welcomePage.html";
+            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
         }
     });
 
