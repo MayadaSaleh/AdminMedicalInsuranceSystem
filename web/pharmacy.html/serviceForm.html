@@ -108,7 +108,7 @@
 
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="dropdown">
+<!--                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
                                 <span class="flag-icon flag-icon-us"></span>
                             </a>
@@ -217,7 +217,7 @@
                                     </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown">
                         <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
                                 <span class="avatar avatar-online">
@@ -226,7 +226,7 @@
                                 </span>
                             </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation">
+<!--                            <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
                             </li>
                             <li role="presentation">
@@ -235,9 +235,9 @@
                             <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
                             </li>
-                            <li class="divider" role="presentation"></li>
+                            <li class="divider" role="presentation"></li>-->
                             <li role="presentation">
-                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                                    <button type="button" onclick="deletecookie()" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</button>
                             </li>
                         </ul>
                     </li>
@@ -268,33 +268,33 @@
                     <ul class="site-menu">
                         <li class="site-menu-category"></li>
 
-                        <li class="site-menu-item ">
-                            <a href="../admin.html/index.html" data-slug="dashboard">
+                          <li class="site-menu-item ">
+                                <a href="../admin.html/index.html" data-slug="dashboard">
                                     <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
                                     <span class="site-menu-title">Dashboard</span>
                                     <div class="site-menu-badge">
                                         <span class="badge badge-success">2</span>
                                     </div>
                                 </a>
-                        </li>
-                        <li class="site-menu-item  ">
-                            <a href="../company.html/companies.html" data-slug="layout">
+                            </li>
+                            <li class="site-menu-item  ">
+                                <a href="../company.html/companies.html" data-slug="layout">
                                     <i class="site-menu-icon fas fa-building" aria-hidden="true"></i>
                                     <span class="site-menu-title">Companies</span>
                                 </a>
-                        </li>
-                        <li class="site-menu-item active">
-                            <a href="medicalservices.html" data-slug="page">
+                            </li>
+                            <li class="site-menu-item active">
+                                <a href="../admin.html/medicalServices.html" data-slug="page">
                                     <i class="site-menu-icon fas fa-user-md" aria-hidden="true"></i>
                                     <span class="site-menu-title">Medical Services</span>
                                 </a>
-                        </li>
-                        <li class="site-menu-item">
-                            <a href="suggestion.html" data-slug="uikit">
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="../suggestion.html/suggestion.html" data-slug="uikit">
                                     <i class="site-menu-icon fas fa-comments" aria-hidden="true"></i>
                                     <span class="site-menu-title">Suggestion</span>
                                 </a>
-                        </li>
+                            </li>
                     </ul>
 
                 </div>
@@ -319,27 +319,33 @@
                     <div class="col-md-12">
                         <h1 class="page-title">Add New Pharmacy</h1>
                         <ol class="breadcrumb ">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="medicalservices.html">Medical Service Type</a></li>
-                            <li><a href="perService.html">Pharmacies List</a></li>
+                            <li><a href="../admin.html/index.html">Home</a></li>
+                            <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
+                            <li><a href="../pharmacy.html/perService.html">Pharmacies List</a></li>
                             <li class="active">Add Pharmacy</li>
                     </div>
                 </div>
             </div>
             <div class="panel">
-                <form>
+                <form action="../pharmacy.html/perService.html">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <div class="input-group input-group-icon input-group-file">
+                                 <div class="input-group input-group-icon input-group-file">
                                     <span class=" input-group-btn">
                                                 <span class="btn btn-file">
                                                     <i class="icon wb-upload" aria-hidden="true"></i>
-                                                    <input type="file" name="" multiple="">
+                                                    <input type="file" id="fileButton" >
                                                 </span>
                                     </span>
-                                    <input type="text" class="form-control" readonly="" placeholder="Pharmacy Picture">
 
+                                    <progress value="0" hidden="" max="100" id="progress">0%</progress>
+                                        <input type="text" id="urlImage" class="form-control" name="urlImage" placeholder="Pharmacy Image" required/>  
+                                        <button type="button" hidden="" id="fileInput" value="upload">
+                                        </button>        
+                                        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+                                        <script src="../uploadImage.js"></script>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -361,7 +367,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy EN Name" id="pharmacy_name_en">
+                                    <input type="text" class="form-control" placeholder="Pharmacy EN Name" id="pharmacy_name_en" required>
                                 </div>
                             </div>
                         </div>
@@ -371,7 +377,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy AR Name" id="pharmacy_name_ar">
+                                    <input type="text" class="form-control" placeholder="Pharmacy AR Name" id="pharmacy_name_ar" required>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +394,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Phone" id="phone1">
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone1" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +404,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Second Phone" id="phone2">
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
@@ -408,7 +414,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Third Phone" id="phone3">
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
                                 </div>
                             </div>
                         </div>
@@ -418,7 +424,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Address" id="pharmacy_address">
+                                    <input type="text" class="form-control" placeholder="Pharmacy Address" id="pharmacy_address" required>
                                 </div>
                             </div>
                         </div>
@@ -431,7 +437,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="pharmacy_open_hour">
+                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="pharmacy_open_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +447,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="pharmacy_close_hour">
+                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="pharmacy_close_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +460,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="pharmacy_start_date">
+                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="pharmacy_start_date" required>
                                 </div>
                             </div>
                         </div>
@@ -464,7 +470,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="End Date" id="pharmacy_end_date">
+                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="pharmacy_end_date" required>
                                 </div>
                             </div>
                         </div>
@@ -477,7 +483,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Lat" id="pharmacy_latitude">
+                                    <input type="text" class="form-control" placeholder="Pharmacy Lat" id="pharmacy_latitude" required>
                                 </div>
                             </div>
                         </div>
@@ -487,7 +493,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Pharmacy Long" id="pharmacy_longitude">
+                                    <input type="text" class="form-control" placeholder="Pharmacy Long" id="pharmacy_longitude" required>
                                 </div>
                             </div>
                         </div>
@@ -495,7 +501,7 @@
 
                     <div class="row">
                         <div class="actionBtn text-center">
-                            <button class="btn btn-default btn-outline btn-round"  type="button" onclick="addPharmacy()">
+                            <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
                                         <i class="icon fas fa-check" aria-hidden="true"></i>
                                         <span class="">DONE</span>
                                     </button>

@@ -135,6 +135,7 @@ and open the template in the editor.
     <script src="../company.js/jquery-1.7.1.min.js"></script>
     <script src="../employee.js/insertEmployee.js"></script>
    <script src="../company.js/SpecificCompany.js"></script>
+  
 </head>
 
 <body>
@@ -316,7 +317,7 @@ and open the template in the editor.
                             </li>
                             <li class="divider" role="presentation"></li>-->
                             <li role="presentation">
-                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                                    <button type="button" onclick="deletecookie()" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</button>
                             </li>
                         </ul>
                     </li>
@@ -471,17 +472,50 @@ and open the template in the editor.
             <div class="panel">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-6">
                             <h3 class="panel-title">Employees List</h3>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class=" page-header-actions secbtn-header-actions">
                                 <form method="get">
                                <button  type="button" id="getEmployees" onclick="insertEmp()" class="btn btn-sm btn-default btn-outline btn-round" >
                                         <i class="icon fas fa-plus" aria-hidden="true"></i>
                                         <span class="">New Employee</span>
                                </button>
-                             </form>
+                                    
+                                    <br><br>
+<!--                                    <table> 
+                                        <tbody>
+                                            <tr>-->
+                                                
+                            <!--<input  type="file" id="importEmployees" >-->
+
+                                                <!--<td>-->
+                            <input type="file" id="fileButton" >
+                     <progress value="0" hidden="" max="100" id="progress">0%</progress>
+                                        <input type="text" id="urlImage" class="form-control" name="urlImage" required/>  
+                                        <button type="button" hidden="" id="fileInput" value="upload" >
+<!--                                            <i class="icon fas fa-plus" aria-hidden="true"></i>
+                                        <span class="">Download Employee Data!</span>-->
+                                        </button>        
+                                        
+                                               
+                                                    
+                                                <!--</td>-->
+                                                <!--<td>-->
+                                <button  type="button" id="downloadEmployees" onclick="upload()" class="btn btn-sm btn-default btn-outline btn-round" >
+                                        <i class="icon fas fa-plus" aria-hidden="true"></i>
+                                        <span class="">Download Employee Data!</span>
+                               </button>
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                
+                                
+                                
+                                
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -637,7 +671,8 @@ and open the template in the editor.
     <script src="../assets/js/components/slidepanel.js"></script>
     <script src="../assets/js/components/switchery.js"></script>
     <script src="../assets/js/components/bootstrap-sweetalert.js"></script>
-
+ <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="../uploadImage.js"></script>
 
     <script>
         (function(document, window, $) {

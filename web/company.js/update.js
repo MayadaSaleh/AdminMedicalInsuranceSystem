@@ -1,5 +1,13 @@
 dispalyCompany();
 
+function deletecookie() {
+
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 
 function dispalyCompany() {
 
@@ -8,7 +16,7 @@ function dispalyCompany() {
      c = url.searchParams.get("companyId");
 
     $.ajax({
-    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getCompany/'+c,
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/company/getCompany/'+c,
                     method: 'get',
                     data: {},
                     dataType: 'json',
@@ -43,14 +51,14 @@ function updateCompany(){
                 var requestPhone1 = $('#companyPhone1').val();
     
     $.ajax({
-                    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/update',
+                    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/company/update',
                     type: 'PUT',
                     data:JSON.stringify(eval({"id":c, "name":requestName, "email":requestEmail, "latitude":requestLat, "longitude":requestLong, "address":requestAdd, "packageType":requestPackage, "startDate":requestStartDate, "endDate":requestEndDate, "ceo":requestCeo, "medicalInsuranceId":1, "phones":[requestPhone1]})),
                     contentType: "application/json; charset=utf-8",
                     dataType:'json',
                     success: function (response) {
 //                      
-                          window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/getAllCompany.html";
+                          window.location.href="http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/companies.html";
                     },
                     error: function (err) {
                     }

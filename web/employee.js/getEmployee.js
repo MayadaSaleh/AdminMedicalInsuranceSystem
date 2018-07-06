@@ -6,6 +6,14 @@
 
 getEmployee();
 
+function deletecookie() {
+
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 function getEmployee() {
 
     var resultElement = $('#resultDiv');
@@ -16,7 +24,7 @@ function getEmployee() {
 
 //var requestData = $('#employeeId').val();
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
         method: 'get',
         data: {},
         dataType: 'json',

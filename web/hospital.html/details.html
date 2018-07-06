@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
     <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="../assets/vendor/jt-timepicker/jquery-timepicker.css">
-    <link rel="stylesheet" href="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-sweetalert/sweet-alert.css">
+
     <link rel="stylesheet" href="../assets/vendor/footable/footable.core.css">
 
     <link rel="stylesheet" href="../assets/css/pages/companies.css">
@@ -268,7 +268,7 @@
                     <ul class="site-menu">
                         <li class="site-menu-category"></li>
 
-                          <li class="site-menu-item ">
+                           <li class="site-menu-item ">
                                 <a href="../admin.html/index.html" data-slug="dashboard">
                                     <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
                                     <span class="site-menu-title">Dashboard</span>
@@ -312,278 +312,122 @@
         </div>
     </div>
     <!-- Page -->
-    <div class="page  formPage">
+    <div class="page companiesPage">
         <div class="page-content">
             <div class="page-header">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-title">Add New Hospital</h1>
+                    <div class="col-md-7">
+                        <div class="media-left">
+                            <a class="avatar avatar-lg" href="javascript:void(0)">
+                                    <img src="../assets/portraits/download.jpg" alt="...">
+                                </a>
+                        </div>
+                        <div class="media-body">
+                            <h1 class="page-title" id="nameE"></h1>
+                            <div class="rating" id="rate"><i class="fas fa-star"></i> </div>
+                        </div>
                         <ol class="breadcrumb ">
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
+                            <li><a href="../admin.html/medicalServices.html">Medical Services Type</a></li>
                             <li><a href="perService.html">Hospitals List</a></li>
-                            <li class="active">Add Hospital</li>
+                            <li class="active">Hospital Details</li>
+                        </ol>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="panel mainInfo">
+                <div class="row">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-building"></i>
+                        <span id="nameEn"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-building"></i>
+                        <span id="nameAr"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-id-card-alt"></i>
+                        <span id="id"></span>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-user-tie"></i>
+                        <span id="ceo"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-clock"></i>
+                        <span class="openHr" id="openH"></span>
+                        <span>-</span>
+                        <span class="closedHr" id="closedH"></span>
+                    </div>
+
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span id="phone1"></span>
+                        <span>-</span>
+                        <span id="phone2"></span>
+                        <span>-</span>
+                        <span id="phone3"></span>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-hourglass-start"></i>
+                        <span id="startD"></span>
+                    </div>
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-hourglass-end"></i>
+                        <span id="endD"></span>
+                    </div>
+                   
+                </div>
+                <div class="row">
+
+
+                    <div class="perMainInfo col-md-4">
+                        <i class="fas fa-location-arrow"></i>
+                        <span> 
+                                <span class="lat" id="lat"></span>
+                        <span>-</span>
+                        <span class="long" id="long"></span>
+                        </span>
+                    </div>
+                    <div class="perMainInfo col-md-8">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="address"></span>
                     </div>
                 </div>
             </div>
-            <div class="panel">
-                <form action="../hospital.html/getAllHospitals.html">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                 <div class="input-group input-group-icon input-group-file">
-                                    <span class=" input-group-btn">
-                                                <span class="btn btn-file">
-                                                    <i class="icon wb-upload" aria-hidden="true"></i>
-                                                    <input type="file" id="fileButton" >
-                                                </span>
-                                    </span>
 
-                                    <progress value="0" hidden="" max="100" id="progress">0%</progress>
-                                    <input type="text" placeholder="Hospital Image" id="urlImage" class="form-control" name="urlImage" required/>  
-                                        <button type="button" hidden="" id="fileInput" value="upload">
-                                        </button>        
-                                        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-                                        <script src="../uploadImage.js"></script>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                           
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital EN Name" id="name_en" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital AR Name" id="name_ar" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="panel serviceSections">
+                <h4 class="example-title">Hospital Departments</h4>
 
+                <ul class="list-group list-group-dividered list-group-full" id="theList">
+                   
+                </ul>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user-tie" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="CEO Name" id="ceo" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+            </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" id="phone1" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
-                                </div>
-                            </div>
+               <div class="panel feedbackComments">
+                <div class="nav-tabs-horizontal">
+                    <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+                        <li class="active" role="presentation"><a data-toggle="tab" href="#exampleTabsLineOne" aria-controls="exampleTabsLineOne" role="tab" aria-expanded="true">Reviews</a></li>
+                        <li role="presentation" class=""><a data-toggle="tab" href="#exampleTabsLineTwo" aria-controls="exampleTabsLineTwo" role="tab" aria-expanded="false">Complaints</a></li>
+                    </ul>
+                    <!-- review/complain-->
+                    <div class="tab-content padding-top-20">
+                        <div class="tab-pane active" id="exampleTabsLineOne" role="tabpanel">
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
-                                </div>
-                            </div>
+                        <div class="tab-pane" id="exampleTabsLineTwo" role="tabpanel">
                         </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
-                                </div>
-                            </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-clock" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-clock" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Lat" id="latitude" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Long" id="longitude" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Location" id="address" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <!-- Example Checkboxes -->
-                            <div class="example-wrap">
-                                <h4 class="example-title">Hospitals Departments</h4>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c1" value="Accident and emergency (A&E)">
-                                            <label for="c1">Accident and emergency (A&E)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c2" checked="" value="Anaesthetics">
-                                            <label for="c2">Anaesthetics</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c3" value="Ear nose and throat (ENT)">
-                                            <label for="c3">Ear nose and throat (ENT)
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c4" checked="" value="Elderly services department">
-                                            <label for="c4">Elderly services department
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c5" value="General surgery">
-                                            <label for="c5">General surgery
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c6" checked="" value="Maternity departments">
-                                            <label for="c6">Maternity departments
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c7" value="Neonatal unit">
-                                            <label for="c7">Neonatal unit
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c8" checked="" value="Obstetrics and gynaecology units">
-                                            <label for="c8">Obstetrics and gynaecology units
-</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- End Example Checkboxes -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="actionBtn text-center">
-                             <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
-                                        <i class="icon fas fa-check" aria-hidden="true"></i>
-                                        <span class="">SAVE</span>
-                                    </button>
-
-
-
-                        </div>
-                    </div>
-                </form>
+                    <!-- end/review/complain-->
+                </div>
             </div>
         </div>
     </div>
@@ -603,16 +447,15 @@
     <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
     <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
     <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-    <script src="../assets/vendor/jt-timepicker/jquery.timepicker.min.js"></script>
-    <script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+
     <script src="../assets/vendor/footable/footable.all.min.js"></script>
-    <script src="../assets/vendor/select2/select2.min.js"></script>
 
     <!-- Plugins -->
     <script src="../assets/vendor/switchery/switchery.min.js"></script>
     <script src="../assets/vendor/intro-js/intro.js"></script>
     <script src="../assets/vendor/screenfull/screenfull.js"></script>
     <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="../assets/vendor/bootstrap-sweetalert/sweet-alert.js"></script>
 
 
     <!-- Scripts -->
@@ -630,8 +473,8 @@
     <script src="../assets/js/components/animsition.js"></script>
     <script src="../assets/js/components/slidepanel.js"></script>
     <script src="../assets/js/components/switchery.js"></script>
-    <script src="../assets/js/components/jt-timepicker.js"></script>
-    <script src="../assets/js/components/bootstrap-datepicker.js"></script>
+    <script src="../assets/js/components/bootstrap-sweetalert.js"></script>
+
 
     <script>
         (function(document, window, $) {
@@ -642,15 +485,48 @@
                 Site.run();
             });
 
-            //upload Image
-            $(".input-group-file .input-group-btn input[type=file]").on("change", function() {
-                var filePath = this.files[0].name;
-                var placeHolderChange = $('.input-group-file input[type=text]').attr("placeholder", filePath);
+            // Pagination
+            // ----------
+            (function() {
+                $('#examplePagination').footable();
+                $('#exampleShow').change(function(e) {
+                    e.preventDefault();
+                    var pagesize = $(this).find('option:selected').val();
+                    $('#examplePagination').data('page-size', pagesize);
+                    $('#examplePagination').trigger('footable_initialized');
+                });
+            })();
+
+
+            $('.exampleWarningCancel').on("click", function() {
+                swal({
+                        title: "You will delete this item",
+                        text: "You will not be able to recover this item again",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: '#DD6B55',
+                        confirmButtonText: "No, cancel please !",
+                        cancelButtonText: 'Yes, delete it !',
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+
+                            swal("Cancelled", "Your item is safe :)",
+                                "error");
+                        } else {
+                            swal("Deleted ",
+                                "Your item has been deleted ",
+                                "success");
+                        }
+                    });
             });
         })(document, window, jQuery);
     </script>
 
 </body>
-<script src="../jquery-1.7.1.min.js"></script>
-    <script src="../hospital.js/hospital.js"></script>
+
+ <script src="../jquery-1.7.1.min.js"></script>
+    <script src="../hospital.js/details.js"></script>
 </html>

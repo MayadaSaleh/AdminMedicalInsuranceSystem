@@ -6,7 +6,7 @@ function addAdminApi() {
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/admin/insert',
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/admin/insert',
         type: 'POST',
         data: JSON.stringify(eval({"username": userName, "password": password})),
         contentType: "application/json; charset=utf-8",
@@ -18,12 +18,12 @@ function addAdminApi() {
             if (response.status == true) {
                 //resultElement.html(response.status);
                 alert("admin " + userName + " is inserted successfuly");
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
+                window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
 
 
             } else {
                 alert("error is  " + userName + " insertion");
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
+                window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
             }
 
 
@@ -31,7 +31,7 @@ function addAdminApi() {
         error: function (err) {
            // alert(err);
             alert("errorm is  " + userName + " insertion");
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
+            window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
         }
     });
 

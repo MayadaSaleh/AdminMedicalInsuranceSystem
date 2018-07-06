@@ -24,8 +24,8 @@ function checkCookie() {
     var password = getCookie("passwordAdminConsolto");
     if (user != "" && password != "") {
         alert("Welcome again " + user);
-        window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
+        window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
     } else {
-        window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
+        window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
     }
 }

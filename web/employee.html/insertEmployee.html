@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js before-run" lang="en">
 
@@ -53,8 +54,6 @@
             Breakpoints();
         </script>
 
-        <script src="../jquery-1.7.1.min.js"></script>
-        <script src="../employee.js/insertEmployee.js"></script>
     </head>
 
     <body>
@@ -239,7 +238,7 @@
                                                                 </li>
                                                                 <li class="divider" role="presentation"></li>-->
                                 <li role="presentation">
-                                    <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                                    <button type="button" onclick="deletecookie()" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</button>
                                 </li>
                             </ul>
                         </li>
@@ -329,7 +328,7 @@
                     </div>
                 </div>
                 <div class="panel">
-                    <form action="">
+                    <form action="../company.html/companies.html">
                         <div class="row">
 
                             <div class="col-md-12">
@@ -338,7 +337,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-user" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="name"  class="form-control" placeholder="Employee Name">
+                                        <input type="text" id="name"  class="form-control" placeholder="Employee Name" required>
                                     </div>
                                 </div>
 
@@ -352,12 +351,12 @@
                                         <span class=" input-group-btn">
                                             <span class="btn btn-file">
                                                 <i class="icon wb-upload" aria-hidden="true"></i>
-                                                <input type="file" id="fileButton">
+                                                <input type="file" id="fileButton" >
                                             </span>
                                         </span>
                                         <!--<input type="file" id="fileButton"/>-->
                                         <progress value="0" hidden="" max="100" id="progress">0%</progress>
-                                        <input type="text" id="urlImage" class="form-control" name="urlImage"/>  
+                                        <input type="text" id="urlImage" class="form-control" name="urlImage" required/>  
                                         <button type="button" hidden="" id="fileInput" value="upload">
                                         </button>        
                                         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
@@ -373,7 +372,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="password" class="form-control" placeholder="Employee Password">
+                                        <input type="text" id="password" maxlength="20" class="form-control" placeholder="Employee Password" required>
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +384,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-briefcase" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="job" class="form-control" placeholder="Employee Job">
+                                        <input type="text" id="job" class="form-control" placeholder="Employee Job" required>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +394,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-wallet" aria-hidden="true"></span>
                                         </span>
-                                        <input type="number" id="packageType" class="form-control" placeholder="Employee Package">
+                                        <input type="number" id="packageType" step="0.001" class="form-control" placeholder="Employee Package" required>
                                     </div>
                                 </div>
                             </div>
@@ -407,7 +406,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                         </span>
-                                        <input type="number" id="phone1" class="form-control" placeholder="Employee Phone">
+                                        <input type="tel" maxlength="15" id="phone1" placeholder="xxx-xxxxxxxxxxx" pattern="[0-9]{3}-[0-9]{11}" class="form-control" placeholder="Employee Phone" required>
                                     </div>
                                 </div>
                             </div>
@@ -417,7 +416,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-envelope" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="email" class="form-control" placeholder="Employee Email">
+                                        <input type="text" id="email" class="form-control" placeholder="Employee Email" required>
                                     </div>
                                 </div>
                             </div>
@@ -429,7 +428,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="startDate" data-plugin="datepicker" class="form-control" placeholder="Start Date">
+                                        <input id="startDate" type="date" data-plugin="datepicker" class="form-control" placeholder="Start Date" required>
                                     </div>
                                 </div>
                             </div>
@@ -439,7 +438,7 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="endDate" class="form-control" data-plugin="datepicker"  placeholder="End Date">
+                                        <input type="date" id="endDate" class="form-control" data-plugin="datepicker"  placeholder="End Date" required>
                                     </div>
                                 </div>
                             </div>
@@ -473,14 +472,14 @@
                                         <span class="input-group-addon">
                                             <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" id="address" class="form-control" placeholder="Employee Location">
+                                        <input type="text" id="address" class="form-control" placeholder="Employee Location" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="actionBtn text-center">
-                                <button type="button" class="btn btn-default btn-outline btn-round" id="btnInsertEmployee" onclick="insertEmployeeInCompany()">
+                                <button type="submit" class="btn btn-default btn-outline btn-round" id="btnInsertEmployee" onclick="validateEmployee()">
                                         <i class="icon fas fa-check" aria-hidden="true"></i>
                                         <span class="">DONE</span>
                                     </button>
@@ -555,4 +554,6 @@
 
     </body>
 
+        <script src="../jquery-1.7.1.min.js"></script>
+        <script src="../employee.js/insertEmployee.js"></script>
 </html>

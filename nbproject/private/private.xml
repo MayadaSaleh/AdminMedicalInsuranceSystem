@@ -2,56 +2,74 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/suggestion.js/get_suggestion.js</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/admin.html/welcomePage.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/META-INF/context.xml</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/company.html/getAllCompany.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/suggestion.html/suggestion.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/company.html/company.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/suggestion.js/get_allsuggestions.js</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.js/service_reviews.js</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/company.html/companies.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.html/reviews.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/employee.html/getEmployee.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.html/service_reviews.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/company.js/getAll.js</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/control.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/suggestion.html/suggestion_details.html</file>
-            <file>file:/D:/hoda/ITI/projects/medicalproj/AdminMedicalInsuranceSystem/web/review.js/get_reviews.js</file>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <group>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/company.html/getAllCompany.html</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/employee.js/updateEmployee.js</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/employee.js/getEmployee.js</file>
-            <file>file:/C:/Users/Mayada%20Saleh/Desktop/GP_GitHub/Admin_GitHub/AdminMedicalInsuranceSystem/web/employee.html/updateEmployee.html</file>
-=======
-        <group name="AJAX">
-            <file>file:/C:/Users/Hagar/Documents/New%20folder/AdminMedicalInsuranceSystem/web/pharmacy.js/PharmacyDetails.js</file>
-            <file>file:/C:/Users/Hagar/Documents/New%20folder/AdminMedicalInsuranceSystem/web/pharmacy.js/pharmacy.js</file>
-            <file>file:/C:/Users/Hagar/Documents/New%20folder/AdminMedicalInsuranceSystem/web/pharmacy.html/perService.html</file>
-            <file>file:/C:/Users/Hagar/Documents/New%20folder/AdminMedicalInsuranceSystem/web/pharmacy.html/serviceForm.html</file>
->>>>>>> 565599cb97d112d4e35f35d4f323599235193018
-=======
-        <group name="UI">
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/update.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/assets/vendor/bootstrap-sweetalert/sweet-alert.min.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/UpdateCompany.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/companies.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/insert.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/getAll.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/company.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/SpecificCompany.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.js/company.js</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/InsertCompany.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/company.html/getAllCompany.html</file>
-            <file>file:/C:/Users/Aya/Documents/GitHub/AdminMedicalInsuranceSystem/web/assets/vendor/bootstrap-sweetalert/sweet-alert.js</file>
->>>>>>> 9bef2dd35c74e3f63b2965d73817c5c49b4d0c28
->>>>>>> 983915550f54e6e6b8845ab930851760469ec590
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/clinic.html/clinic.html</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.js/hospital.js</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.html/details.html</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.html/updateHospital.html</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/clinic.js/clinic.js</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.html/hospital.html</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.js/update.js</file>
+            <file>file:/D:/hoda/ITI/projects/Admin_hoda2/AdminMedicalInsuranceSystem/web/hospital.js/details.js</file>
         </group>
+        <group name="UI">
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/hospital.html/details.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/review.html/service_reviews.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/employee.html/insertEmployee.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/admin.html/splashScreen.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.html/updatePharmacy.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/employee.js/updateEmployee.js</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.html/serviceForm.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/lab.html/lab.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/hospital.html/getAllHospitals.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/employee.js/insertEmployee.js</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/lab.html/labDetails.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/lab.html/updateLab.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/hospital.html/updateHospital.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/review.html/reviews.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/employee.html/updateEmployee.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/employee.html/getEmployee.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.html/serviceDetails.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/suggestion.html/suggestion.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.html/perService.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/suggestion.html/suggestion_details.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/hospital.html/hospital.html</file>
+            <file>file:/C:/Users/Aya/Desktop/AdminMedicalInsuranceSystem/web/lab.html/labForm.html</file>
+        </group>
+        <group name="AJAX">
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/lab.js/lab.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/review.js/service_reviews.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/suggestion.js/get_allsuggestions.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/suggestion.js/get_suggestion.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/getAll.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/admin.js/splashCheckCookies.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/employee.js/updateEmployee.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/review.js/get_reviews.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/hospital.js/update.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/lab.js/updateLab.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/clinic.js/update.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/clinic.js/clinic.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/company.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/uploadImage.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/jquery-1.7.1.min.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/employee.js/getEmployee.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/admin.js/dashboard.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.js/updatePharmacy.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/hospital.js/hospital.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/insert.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.js/pharmacy.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/pharmacy.js/pharmacyDetails.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/employee.js/uploadImage.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/clinic.js/clinicDetails.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/admin.js/addAdmin.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/employee.js/insertEmployee.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/hospital.js/details.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/employee.js/getCompanyEmployees.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/lab.js/labDetails.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/admin.js/login.js</file>
+            <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/update.js</file>
+        </group>
+        <group name="chat"/>
     </open-files>
 </project-private>

@@ -15,16 +15,24 @@ if (deleteFlag === "true") {
 
 }
 
+function deletecookie() {
+
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 
 
 function deleteEmployee() {
 //    console.log('delete');
     $.ajax({
         type: 'DELETE',
-        url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+        url: "http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
-         window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + c;
+         window.location.href="http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + c;
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('error in delete Employee');
@@ -46,8 +54,7 @@ function findAll() {
 
     $.ajax({
         type: 'GET',
-     //   url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + c,
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + c,
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {

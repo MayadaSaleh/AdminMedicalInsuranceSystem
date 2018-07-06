@@ -34,6 +34,16 @@ var detailsFlag = url.searchParams.get("detailFlag");
 
 getCompany();
 
+
+
+function deletecookie() {
+
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 function getCompany() {
         console.log('getttttttttttttttttttttttttt');
 
@@ -44,7 +54,7 @@ function getCompany() {
 //     getIdCompany(c);
       findAll(detailCompanyId);
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/company/getCompany/' + detailCompanyId,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -88,19 +98,19 @@ function deleteEmployee() {
 
     $.ajax({
         type: 'DELETE',        
-        url: "http://localhost:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
+        url: "http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/deleteEmployee/employeeID=" + deletedEmployeeID,
 
         success: function (data, textStatus, jqXHR) {
          //   alert('Employee deleted successfully');
       console.log("id of company in delete"+detailCompanyId);
-   //window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+   //window.location.href="http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
         },
         error: function (jqXHR, textStatus, errorThrown) {
          //   alert('error in delete Employee');
         }
     });
     
-     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
+     window.location.href="http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + detailCompanyId;
 
 }
 
@@ -118,8 +128,8 @@ function findAll(c) {
 
     $.ajax({
         type: 'GET',
-     //   url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
+     //   url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=1',
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployees/companyID=' + detailCompanyId,
         dataType: 'json',
         success: function (data) {
             $.each(data.employeeListObject, function (index, element) {
@@ -138,6 +148,36 @@ function findAll(c) {
 
 function insertEmp (){
     console.log("in insert method with id = "+detailCompanyId);
-     window.location.href="http://localhost:8084/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
+     window.location.href="http://192.168.137.1:8084/AdminMedicalInsuranceSystem/employee.html/insertEmployee.html?companyId=" + detailCompanyId;
   
+}
+
+
+function upload()
+ {
+      var filePath = document.getElementById("fileButton").value;
+     var filename = filePath.replace(/^.*[\\\/]/, '');
+     var path=document.getElementById("urlImage").value;
+         var url = {path :path,name:filename};
+
+    console.log('in uplaod form '+filename);
+ $.ajax({
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/upload',
+        type: 'POST',
+        data: JSON.stringify(url),
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        success: function (response) {
+        console.log('in upload success');
+        window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId="+ detailCompanyId + "&detailFlag=true";
+
+        },
+        error: function (err) {
+         console.log('in uplaod failed');
+
+        }
+    });
+    //     });
+    // });
+
 }
