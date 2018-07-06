@@ -268,7 +268,7 @@
                     <ul class="site-menu">
                         <li class="site-menu-category"></li>
 
-                          <li class="site-menu-item ">
+                           <li class="site-menu-item ">
                                 <a href="../admin.html/index.html" data-slug="dashboard">
                                     <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
                                     <span class="site-menu-title">Dashboard</span>
@@ -317,21 +317,21 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-title">Add New Hospital</h1>
+                        <h1 class="page-title">Update Lab</h1>
                         <ol class="breadcrumb ">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
-                            <li><a href="perService.html">Hospitals List</a></li>
-                            <li class="active">Add Hospital</li>
+                            <li><a href="perService.html">Labs List</a></li>
+                            <li class="active">Update Lab</li>
                     </div>
                 </div>
             </div>
             <div class="panel">
-                <form action="../hospital.html/getAllHospitals.html">
+                <form action="../lab.html/lab.html">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                 <div class="input-group input-group-icon input-group-file">
+                                <div class="input-group input-group-icon input-group-file">
                                     <span class=" input-group-btn">
                                                 <span class="btn btn-file">
                                                     <i class="icon wb-upload" aria-hidden="true"></i>
@@ -340,7 +340,7 @@
                                     </span>
 
                                     <progress value="0" hidden="" max="100" id="progress">0%</progress>
-                                    <input type="text" placeholder="Hospital Image" id="urlImage" class="form-control" name="urlImage" required/>  
+                                        <input type="text" id="urlImage" class="form-control" name="urlImage" placeholder="Lab Image" required/>  
                                         <button type="button" hidden="" id="fileInput" value="upload">
                                         </button>        
                                         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
@@ -349,9 +349,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                           
-                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -360,7 +358,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital EN Name" id="name_en" required>
+                                    <input type="text" class="form-control" placeholder="Lab EN Name" id="name_en" required>
                                 </div>
                             </div>
                         </div>
@@ -370,7 +368,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital AR Name" id="name_ar" required>
+                                    <input type="text" class="form-control" placeholder="Lab AR Name" id="name_ar" required>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +386,17 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Lab Address" id="address" required>
+                                </div>
+                            </div>
+                        </div>
+                       
                     </div>
 
                     <div class="row">
@@ -398,7 +406,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" id="phone1" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
+                                    <input type="text" class="form-control" id="phone1" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
@@ -408,17 +416,17 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
+                                    <input type="text" class="form-control" id="phone2" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
-                          <div class="col-md-6">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
+                                    <input type="text" class="form-control"  id="phone3" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
                                 </div>
                             </div>
                         </div>
@@ -431,7 +439,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +449,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +462,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
                                 </div>
                             </div>
                         </div>
@@ -464,108 +472,108 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Lat" id="latitude" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Long" id="longitude" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
+                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Location" id="address" required>
+                                    <input type="text" class="form-control" placeholder="medical type id" id="medical_type_id" disabled>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Lab Lat" id="latitude" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Lab Long" id="longitude" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <!-- Example Checkboxes -->
                             <div class="example-wrap">
-                                <h4 class="example-title">Hospitals Departments</h4>
+                                <h4 class="example-title">Labs Specializations</h4>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c1" value="Accident and emergency (A&E)">
-                                            <label for="c1">Accident and emergency (A&E)</label>
+                                            <input type="checkbox" id="inputUnchecked1" value="Urine test">
+                                            <label for="inputUnchecked1">Urine test</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c2" checked="" value="Anaesthetics">
-                                            <label for="c2">Anaesthetics</label>
+                                            <input type="checkbox" id="inputChecked2" value="Tumor markers">
+                                            <label for="inputChecked2">Tumor markers</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c3" value="Ear nose and throat (ENT)">
-                                            <label for="c3">Ear nose and throat (ENT)
+                                            <input type="checkbox" id="inputUnchecked3" value="Blood tests">
+                                            <label for="inputUnchecked3">Blood tests
+</label>
+                                        </div>
+                                    </div>
+<!--                                    <div class="col-md-4">
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="inputChecked4" checked="">
+                                            <label for="inputChecked4">Elderly services department
 </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c4" checked="" value="Elderly services department">
-                                            <label for="c4">Elderly services department
+                                            <input type="checkbox" id="inputUnchecked5">
+                                            <label for="inputUnchecked5">General surgery
 </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c5" value="General surgery">
-                                            <label for="c5">General surgery
+                                            <input type="checkbox" id="inputChecked6" checked="">
+                                            <label for="inputChecked6">Maternity departments
 </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c6" checked="" value="Maternity departments">
-                                            <label for="c6">Maternity departments
+                                            <input type="checkbox" id="inputUnchecked7">
+                                            <label for="inputUnchecked7">Neonatal unit
 </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c7" value="Neonatal unit">
-                                            <label for="c7">Neonatal unit
+                                            <input type="checkbox" id="inputChecked8" checked="">
+                                            <label for="inputChecked8">Obstetrics and gynaecology units
 </label>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c8" checked="" value="Obstetrics and gynaecology units">
-                                            <label for="c8">Obstetrics and gynaecology units
-</label>
-                                        </div>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                             </div>
@@ -574,12 +582,10 @@
                     </div>
                     <div class="row">
                         <div class="actionBtn text-center">
-                             <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
+                            <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
                                         <i class="icon fas fa-check" aria-hidden="true"></i>
-                                        <span class="">SAVE</span>
+                                        <span class="">DONE</span>
                                     </button>
-
-
 
                         </div>
                     </div>
@@ -651,6 +657,6 @@
     </script>
 
 </body>
-<script src="../jquery-1.7.1.min.js"></script>
-    <script src="../hospital.js/hospital.js"></script>
+ <script src="../jquery-1.7.1.min.js"></script>
+    <script src="../lab.js/updateLab.js"></script>
 </html>

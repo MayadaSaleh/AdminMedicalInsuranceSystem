@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-var c;
- empname =null;
+findDetails();
+empname =null;
 empid=0;
 serviceReviews();
 serviceComplains();
- findLabDetails(); 
+var c;
 
 function deletecookie() {
 
@@ -19,13 +19,98 @@ function deletecookie() {
     window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
 
 }
+function findDetails() {
+    console.log('hereeeeeeeeeeeeeeeeeeeeeee');
+    rootURL = 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/details/get'
+    var str = window.location.href;
+    var url = new URL(str);
+    c = url.searchParams.get("id");
+    $.ajax({
+        type: 'GET',
+        url: rootURL + '/?tid=1&sid=' + c,
+        dataType: 'json',
+        success: function (data) {
+
+            var phones = [];
+            var phonesarray = [];
+            var departments = [];
+            var depts = [];
+            depts = data.departments;
+            phones = data.phones;
+            for (var i = 0; i < phones.length; i++)
+            {
+                phonesarray.push(phones[i]);
+
+            }
+            for (var i = 0; i < depts.length; i++)
+            {
+                departments.push(depts[i]);
+
+            }
+            $("#id").append(c);
+            for (var i = 0; i < depts.length; i++)
+            {
+                $("#theList").append('<li class="list-group-item">' + depts[i] + '</li>');
+            }
+            $("#nameAr").append(data.nameAr);
+            $("#nameEn").append(data.nameEn);
+
+            $("#address").append(data.address);
+            $("#openH").append(data.openHour);
+            $("#closedH").append(data.closeHour);
+            $("#startD").append(data.startDate);
+            $("#endD").append(data.endDate);
+            $("#nameE").append(data.nameEn);
+            $("#ceo").append(data.ceo);
+
+            $("#lat").append(data.latitude);
+            $("#long").append(data.longitude);
+
+            $("#serviceId").append(data.id);
+            $("#list").append("Pharmacies List");
+            $("#rate").append(data.rate);
+
+            $("#edit").append("Edit Pharmacy");
+
+            $("#del").append("Delete Pharmacy");
+
+
+            $("#details").append("Pharmacies Details");
+
+            if (phonesarray[0] !== null)
+                $("#phone1").append(phonesarray[0]);
+            else
+            {
+                $("#phone1").append("");
+            }
+
+            if (phonesarray[1] !== null)
+                $("#phone2").append(phonesarray[1]);
+            else
+            {
+                $("#phone2").append("");
+            }
+
+            if (phonesarray[2] !== null)
+                $("#phone3").append(phonesarray[2]);
+            else
+            {
+                $("#phone3").append("");
+            }
+
+
+
+
+        }
+    });
+}
 function serviceReviews() {
     var str = window.location.href;
     var url = new URL(str );
-     c = url.searchParams.get("id");
+    var c = url.searchParams.get("id");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/4/'+c, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/1/'+c, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -59,10 +144,10 @@ function serviceReviews() {
 function serviceComplains() {
     var str = window.location.href;
     var url = new URL(str );
-     c = url.searchParams.get("id");
+    var c = url.searchParams.get("id");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/4/'+c, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/1/'+c, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -93,84 +178,3 @@ function serviceComplains() {
 });
 }
 
-function findLabDetails() {
-    rootURL='http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/details/get';
-    var str = window.location.href;
-    var url = new URL(str);
-     c = url.searchParams.get("id");
- $.ajax({ 
-    type: 'GET', 
-    url: rootURL + '/?tid=4&sid=' + c, 
-    dataType: 'json',
-    success: function (data) { 
-        
-            var phones = [];
-            var phonesarray = [];
-
-            var depts = [];
-            var departments = [];
-            depts=data.labSpecializations;
-            phones = data.labPhones;
-            for (var i = 0; i < phones.length; i++)
-            {
-                phonesarray.push(phones[i]);
-
-            }
-             for (var i = 0; i < depts.length; i++)
-            {
-                departments.push(depts[i]);
-
-            }
-                        $("#id").append(c);
-
-            $("#nameAr").append(data.nameAr);
-            $("#nameE").append(data.nameEn);
-
-            $("#address").append(data.address);
-            $("#openH").append(data.openHour);
-            $("#closedH").append(data.closeHour);
-            $("#startD").append(data.startDate);
-            $("#endD").append(data.endDate);
-            $("#nameE").append(data.nameEn);
-            $("#ceo").append(data.ceo);
-
-            $("#lat").append(data.latitude);
-            $("#long").append(data.longitude);
-
-            $("#serviceId").append(data.id);
-            $("#list").append("Labs List");
-                        $("#rate").append(data.rate);
-
-            $("#edit").append("Edit Lab");
-            
-                        $("#del").append("Delete Lab");
-
-               for(var i=0;i<depts.length;i++)
-               {
-                   $("#theList").append('<li class="list-group-item">'+depts[i]+'</li>');
-               }
-
-            if (phonesarray[0] !== null)
-                $("#phoneOne").append(phonesarray[0]);
-            else
-            {
-                $("#phoneOne").append("");
-            }
-
-            if (phonesarray[1] !== null)
-                $("#phoneTwo").append(phonesarray[1]);
-            else
-            {
-                $("#phoneTwo").append("");
-            }
-
-            if (phonesarray[2] !== null)
-                $("#phoneThree").append(phonesarray[2]);
-            else
-            {
-                $("#phoneThree").append("");
-            }
-
-    }
-});
-}

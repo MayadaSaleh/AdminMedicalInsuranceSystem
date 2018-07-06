@@ -5,11 +5,18 @@
  */
 
 findAllSuggestions();
+function deletecookie() {
 
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 function findAllSuggestions() {
  $.ajax({ 
     type: 'GET', 
-    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/suggestion/get', 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/suggestion/get', 
     dataType: 'json',
     success: function (data) { 
         $.each(data.suggestions, function(index, element) {

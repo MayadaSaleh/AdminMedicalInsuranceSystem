@@ -24,28 +24,18 @@
     <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
     <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="../assets/vendor/jt-timepicker/jquery-timepicker.css">
-    <link rel="stylesheet" href="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-sweetalert/sweet-alert.css">
     <link rel="stylesheet" href="../assets/vendor/footable/footable.core.css">
 
     <link rel="stylesheet" href="../assets/css/pages/companies.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="../assets/fonts/fontawesome-free/web-fonts-with-css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/css/fontawesome-all.css">
 
     <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-
-    <!--[if lt IE 9]>
-<script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
-<![endif]-->
-
-    <!--[if lt IE 10]>
-<script src="../assets/vendor/media-match/media.match.min.js"></script>
-<script src="../assets/vendor/respond/respond.min.js"></script>
-<![endif]-->
 
     <!-- Scripts -->
     <script src="../assets/vendor/modernizr/modernizr.js"></script>
@@ -108,7 +98,7 @@
 
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-<!--                    <li class="dropdown">
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
                                 <span class="flag-icon flag-icon-us"></span>
                             </a>
@@ -217,7 +207,7 @@
                                     </a>
                             </li>
                         </ul>
-                    </li>-->
+                    </li>
                     <li class="dropdown">
                         <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
                                 <span class="avatar avatar-online">
@@ -226,7 +216,7 @@
                                 </span>
                             </a>
                         <ul class="dropdown-menu" role="menu">
-<!--                            <li role="presentation">
+                            <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
                             </li>
                             <li role="presentation">
@@ -235,7 +225,7 @@
                             <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
                             </li>
-                            <li class="divider" role="presentation"></li>-->
+                            <li class="divider" role="presentation"></li>
                             <li role="presentation">
                                     <button type="button" onclick="deletecookie()" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</button>
                             </li>
@@ -311,280 +301,80 @@
                 </a>
         </div>
     </div>
+
+
     <!-- Page -->
-    <div class="page  formPage">
+    <div class="page companiesPage">
         <div class="page-content">
+
             <div class="page-header">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-title">Add New Hospital</h1>
+                    <div class="col-md-8">
+                        <h1 class="page-title">Clinics List</h1>
                         <ol class="breadcrumb ">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
-                            <li><a href="perService.html">Hospitals List</a></li>
-                            <li class="active">Add Hospital</li>
+                            <li class="active">Clinics List</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="page-header-actions">
+                            <a class="btn btn-sm btn-default btn-outline btn-round" href="clinic.html">
+                                    <i class="icon fas fa-plus" aria-hidden="true"></i>
+                                    <span class="">New Clinic</span>
+                                </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Panel Pagination -->
             <div class="panel">
-                <form action="../hospital.html/getAllHospitals.html">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                 <div class="input-group input-group-icon input-group-file">
-                                    <span class=" input-group-btn">
-                                                <span class="btn btn-file">
-                                                    <i class="icon wb-upload" aria-hidden="true"></i>
-                                                    <input type="file" id="fileButton" >
-                                                </span>
-                                    </span>
-
-                                    <progress value="0" hidden="" max="100" id="progress">0%</progress>
-                                    <input type="text" placeholder="Hospital Image" id="urlImage" class="form-control" name="urlImage" required/>  
-                                        <button type="button" hidden="" id="fileInput" value="upload">
-                                        </button>        
-                                        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-                                        <script src="../uploadImage.js"></script>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                           
-                        </div>
+                <div class="panel-body">
+                    <div class="showNum">
+                        <label class="form-inline ">Show
+                                <select id="exampleShow" class="form-control input-sm">
+                                    <option value="5">5</option>
+                                    <option value="10" selected="selected">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                                entries
+                            </label>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital EN Name" id="name_en" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital AR Name" id="name_ar" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <table class="table companyTable toggle-arrow-tiny" id="examplePagination" data-page-size="10">
+                        <thead>
+                            <tr>
+                                <th data-hide="phone">id</th>
 
+                                    <th data-toggle="true">Name</th>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user-tie" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="CEO Name" id="ceo" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                                    <th data-hide="phone">Start Date</th>
+                                    <th data-hide="phone">End Date</th>
+                                    <th data-hide="phone">Total Rate</th>
+                                    <th data-hide="phone">Address</th>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" id="phone1" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
-                                </div>
-                            </div>
-                        </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-clock" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-clock" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Lat" id="latitude" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Long" id="longitude" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Location" id="address" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <!-- Example Checkboxes -->
-                            <div class="example-wrap">
-                                <h4 class="example-title">Hospitals Departments</h4>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c1" value="Accident and emergency (A&E)">
-                                            <label for="c1">Accident and emergency (A&E)</label>
-                                        </div>
+                                <th data-hide="" class="stopSort"></th>
+                                <th data-hide="" class="stopSort"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="insertRow">
+                                
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12">
+                                    <div class="text-right">
+                                        <ul class="pagination"></ul>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c2" checked="" value="Anaesthetics">
-                                            <label for="c2">Anaesthetics</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c3" value="Ear nose and throat (ENT)">
-                                            <label for="c3">Ear nose and throat (ENT)
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c4" checked="" value="Elderly services department">
-                                            <label for="c4">Elderly services department
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c5" value="General surgery">
-                                            <label for="c5">General surgery
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c6" checked="" value="Maternity departments">
-                                            <label for="c6">Maternity departments
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c7" value="Neonatal unit">
-                                            <label for="c7">Neonatal unit
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c8" checked="" value="Obstetrics and gynaecology units">
-                                            <label for="c8">Obstetrics and gynaecology units
-</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- End Example Checkboxes -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="actionBtn text-center">
-                             <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
-                                        <i class="icon fas fa-check" aria-hidden="true"></i>
-                                        <span class="">SAVE</span>
-                                    </button>
-
-
-
-                        </div>
-                    </div>
-                </form>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
+            <!-- End Panel Pagination -->
+
         </div>
     </div>
     <!-- End Page -->
@@ -603,17 +393,15 @@
     <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
     <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
     <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-    <script src="../assets/vendor/jt-timepicker/jquery.timepicker.min.js"></script>
-    <script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+
     <script src="../assets/vendor/footable/footable.all.min.js"></script>
-    <script src="../assets/vendor/select2/select2.min.js"></script>
 
     <!-- Plugins -->
     <script src="../assets/vendor/switchery/switchery.min.js"></script>
     <script src="../assets/vendor/intro-js/intro.js"></script>
     <script src="../assets/vendor/screenfull/screenfull.js"></script>
     <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
-
+    <script src="../assets/vendor/bootstrap-sweetalert/sweet-alert.js"></script>
 
     <!-- Scripts -->
     <script src="../assets/js/core.js"></script>
@@ -630,8 +418,8 @@
     <script src="../assets/js/components/animsition.js"></script>
     <script src="../assets/js/components/slidepanel.js"></script>
     <script src="../assets/js/components/switchery.js"></script>
-    <script src="../assets/js/components/jt-timepicker.js"></script>
-    <script src="../assets/js/components/bootstrap-datepicker.js"></script>
+    <script src="../assets/js/components/bootstrap-sweetalert.js"></script>
+
 
     <script>
         (function(document, window, $) {
@@ -642,15 +430,47 @@
                 Site.run();
             });
 
-            //upload Image
-            $(".input-group-file .input-group-btn input[type=file]").on("change", function() {
-                var filePath = this.files[0].name;
-                var placeHolderChange = $('.input-group-file input[type=text]').attr("placeholder", filePath);
+            // Pagination
+            // ----------
+            (function() {
+                $('#examplePagination').footable();
+                $('#exampleShow').change(function(e) {
+                    e.preventDefault();
+                    var pagesize = $(this).find('option:selected').val();
+                    $('#examplePagination').data('page-size', pagesize);
+                    $('#examplePagination').trigger('footable_initialized');
+                });
+            })();
+
+            $('.exampleWarningCancel').on("click", function() {
+                swal({
+                        title: "You will delete this item",
+                        text: "You will not be able to recover this item again",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: '#DD6B55',
+                        confirmButtonText: "No, cancel please !",
+                        cancelButtonText: 'Yes, delete it !',
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+
+                            swal("Cancelled", "Your item is safe :)",
+                                "error");
+                        } else {
+                            swal("Deleted ",
+                                "Your item has been deleted ",
+                                "success");
+                        }
+                    });
             });
+
         })(document, window, jQuery);
     </script>
 
 </body>
 <script src="../jquery-1.7.1.min.js"></script>
-    <script src="../hospital.js/hospital.js"></script>
+    <script src="../clinic.js/clinic.js"></script>
 </html>

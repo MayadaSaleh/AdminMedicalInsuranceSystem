@@ -108,7 +108,7 @@
 
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-                    <li class="dropdown">
+<!--                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="slide-bottom" aria-expanded="false" role="button">
                                 <span class="flag-icon flag-icon-us"></span>
                             </a>
@@ -217,7 +217,7 @@
                                     </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown">
                         <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="slide-bottom" role="button">
                                 <span class="avatar avatar-online">
@@ -226,7 +226,7 @@
                                 </span>
                             </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation">
+<!--                            <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
                             </li>
                             <li role="presentation">
@@ -235,9 +235,9 @@
                             <li role="presentation">
                                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
                             </li>
-                            <li class="divider" role="presentation"></li>
+                            <li class="divider" role="presentation"></li>-->
                             <li role="presentation">
-                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                                    <button type="button" onclick="deletecookie()" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</button>
                             </li>
                         </ul>
                     </li>
@@ -268,33 +268,33 @@
                     <ul class="site-menu">
                         <li class="site-menu-category"></li>
 
-                        <li class="site-menu-item ">
-                            <a href="../admin.html/index.html" data-slug="dashboard">
+                          <li class="site-menu-item ">
+                                <a href="../admin.html/index.html" data-slug="dashboard">
                                     <i class="site-menu-icon fas fa-home" aria-hidden="true"></i>
                                     <span class="site-menu-title">Dashboard</span>
                                     <div class="site-menu-badge">
                                         <span class="badge badge-success">2</span>
                                     </div>
                                 </a>
-                        </li>
-                        <li class="site-menu-item  ">
-                            <a href="../company.html/companies.html" data-slug="layout">
+                            </li>
+                            <li class="site-menu-item  ">
+                                <a href="../company.html/companies.html" data-slug="layout">
                                     <i class="site-menu-icon fas fa-building" aria-hidden="true"></i>
                                     <span class="site-menu-title">Companies</span>
                                 </a>
-                        </li>
-                        <li class="site-menu-item active">
-                            <a href="medicalservices.html" data-slug="page">
+                            </li>
+                            <li class="site-menu-item active">
+                                <a href="../admin.html/medicalServices.html" data-slug="page">
                                     <i class="site-menu-icon fas fa-user-md" aria-hidden="true"></i>
                                     <span class="site-menu-title">Medical Services</span>
                                 </a>
-                        </li>
-                        <li class="site-menu-item">
-                            <a href="suggestion.html" data-slug="uikit">
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="../suggestion.html/suggestion.html" data-slug="uikit">
                                     <i class="site-menu-icon fas fa-comments" aria-hidden="true"></i>
                                     <span class="site-menu-title">Suggestion</span>
                                 </a>
-                        </li>
+                            </li>
                     </ul>
 
                 </div>
@@ -328,7 +328,7 @@
                         </div>
                         <ol class="breadcrumb ">
                             <li><a href="../index.html">Home</a></li>
-                            <li><a href="../medicalservices.html">Medical Services Type</a></li>
+                            <li><a href="../admin.html/medicalServices.html">Medical Services Type</a></li>
                             <li><a href="../pharmacy.html/perService.html" id="list"></a></li>
                             <li class="active" id="details"></li>
                         </ol>
@@ -413,191 +413,20 @@
             </div>
 
 
-            <div class="panel feedbackComments">
+             <div class="panel feedbackComments">
                 <div class="nav-tabs-horizontal">
                     <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
                         <li class="active" role="presentation"><a data-toggle="tab" href="#exampleTabsLineOne" aria-controls="exampleTabsLineOne" role="tab" aria-expanded="true">Reviews</a></li>
-                        <li role="presentation" class=""><a data-toggle="tab" href="#exampleTabsLineTwo" aria-controls="exampleTabsLineTwo" role="tab" aria-expanded="false">Complains</a></li>
-
-
+                        <li role="presentation" class=""><a data-toggle="tab" href="#exampleTabsLineTwo" aria-controls="exampleTabsLineTwo" role="tab" aria-expanded="false">Complaints</a></li>
                     </ul>
+                    <!-- review/complain-->
                     <div class="tab-content padding-top-20">
                         <div class="tab-pane active" id="exampleTabsLineOne" role="tabpanel">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/2.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Aya Hilal</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            25 March 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/3.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Ahmed Osama</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            2 Sep 2017</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/4.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Hoda Ahmed</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            30 Jan 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/5.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Ali Hassan</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            17 June 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/6.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Aya Hilal</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            25 March 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="tab-pane" id="exampleTabsLineTwo" role="tabpanel">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/3.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Ahmed Osama</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            2 Sep 2017</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/4.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Hoda Ahmed</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            30 Jan 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/2.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Aya Hilal</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            25 March 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/5.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Ali Hassan</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            17 June 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a class="avatar avatar-lg" href="javascript:void(0)">
-                                            <img src="../assets/portraits/6.jpg" alt="...">
-                                        </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Aya Hilal</h4>
-                                    <small><i class="fas fa-calendar-alt"></i>
-
-                                            25 March 2018</small>
-                                    <p>
-                                        Gravissimis iniurias gravissimis admodum puto fidelissimae veterum crudeli desiderat, libenter vituperata, discordia maiorum amori oblique videor. Perfruique commodis atque servare.
-                                    </p>
-                                </div>
-                            </div>
                         </div>
-
-                    </div>
+                        </div>
+                    <!-- end/review/complain-->
                 </div>
             </div>
         </div>
@@ -697,7 +526,7 @@
     </script>
 
 </body>
-  <script src="jquery-1.7.1.min.js"></script>
-    <script src="../pharmacy.js/PharmacyDetails.js"></script>
+  <script src="../jquery-1.7.1.min.js"></script>
+    <script src="../pharmacy.js/pharmacyDetails.js"></script>
 
 </html>

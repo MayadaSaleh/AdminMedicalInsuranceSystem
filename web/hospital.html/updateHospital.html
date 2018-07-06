@@ -317,12 +317,12 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-title">Add New Hospital</h1>
+                        <h1 class="page-title">Update Hospital</h1>
                         <ol class="breadcrumb ">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
                             <li><a href="perService.html">Hospitals List</a></li>
-                            <li class="active">Add Hospital</li>
+                            <li class="active">Update Hospital</li>
                     </div>
                 </div>
             </div>
@@ -388,6 +388,16 @@
                                 </div>
                             </div>
                         </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="medical type id" id="medical_type_id" disabled>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
 
@@ -431,7 +441,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +451,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +464,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
                                 </div>
                             </div>
                         </div>
@@ -464,7 +474,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
                                 </div>
                             </div>
                         </div>
@@ -520,7 +530,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c2" checked="" value="Anaesthetics">
+                                            <input type="checkbox" id="c2"  value="Anaesthetics">
                                             <label for="c2">Anaesthetics</label>
                                         </div>
                                     </div>
@@ -533,7 +543,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c4" checked="" value="Elderly services department">
+                                            <input type="checkbox" id="c4"  value="Elderly services department">
                                             <label for="c4">Elderly services department
 </label>
                                         </div>
@@ -547,7 +557,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c6" checked="" value="Maternity departments">
+                                            <input type="checkbox" id="c6"  value="Maternity departments">
                                             <label for="c6">Maternity departments
 </label>
                                         </div>
@@ -561,7 +571,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c8" checked="" value="Obstetrics and gynaecology units">
+                                            <input type="checkbox" id="c8" value="Obstetrics and gynaecology units">
                                             <label for="c8">Obstetrics and gynaecology units
 </label>
                                         </div>
@@ -652,5 +662,5 @@
 
 </body>
 <script src="../jquery-1.7.1.min.js"></script>
-    <script src="../hospital.js/hospital.js"></script>
+    <script src="../hospital.js/update.js"></script>
 </html>

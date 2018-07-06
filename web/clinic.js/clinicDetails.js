@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 
-var c;
- empname =null;
+empname =null;
 empid=0;
+findDetails();
 serviceReviews();
+
+var c ;
 serviceComplains();
- findLabDetails(); 
+
 
 function deletecookie() {
 
@@ -22,10 +24,10 @@ function deletecookie() {
 function serviceReviews() {
     var str = window.location.href;
     var url = new URL(str );
-     c = url.searchParams.get("id");
+    var c = url.searchParams.get("id");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/4/'+c, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/2/'+c, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -59,10 +61,10 @@ function serviceReviews() {
 function serviceComplains() {
     var str = window.location.href;
     var url = new URL(str );
-     c = url.searchParams.get("id");
+    var c = url.searchParams.get("id");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/4/'+c, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/2/'+c, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -93,62 +95,30 @@ function serviceComplains() {
 });
 }
 
-function findLabDetails() {
-    rootURL='http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/details/get';
-    var str = window.location.href;
+function findDetails() {
+    console.log('hereeeeeeeeeeeeeeeeeeeeeee');
+    rootURL='http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/details/get'
+   var str = window.location.href;
     var url = new URL(str);
-     c = url.searchParams.get("id");
+      c = url.searchParams.get("id");
  $.ajax({ 
     type: 'GET', 
-    url: rootURL + '/?tid=4&sid=' + c, 
+    url: rootURL + '?tid=2&sid=' + c, 
     dataType: 'json',
-    success: function (data) { 
-        
+   success: function (data) {
+
             var phones = [];
             var phonesarray = [];
 
-            var depts = [];
-            var departments = [];
-            depts=data.labSpecializations;
-            phones = data.labPhones;
+            phones = data.phones;
             for (var i = 0; i < phones.length; i++)
             {
                 phonesarray.push(phones[i]);
 
             }
-             for (var i = 0; i < depts.length; i++)
-            {
-                departments.push(depts[i]);
+   
 
-            }
-                        $("#id").append(c);
 
-            $("#nameAr").append(data.nameAr);
-            $("#nameE").append(data.nameEn);
-
-            $("#address").append(data.address);
-            $("#openH").append(data.openHour);
-            $("#closedH").append(data.closeHour);
-            $("#startD").append(data.startDate);
-            $("#endD").append(data.endDate);
-            $("#nameE").append(data.nameEn);
-            $("#ceo").append(data.ceo);
-
-            $("#lat").append(data.latitude);
-            $("#long").append(data.longitude);
-
-            $("#serviceId").append(data.id);
-            $("#list").append("Labs List");
-                        $("#rate").append(data.rate);
-
-            $("#edit").append("Edit Lab");
-            
-                        $("#del").append("Delete Lab");
-
-               for(var i=0;i<depts.length;i++)
-               {
-                   $("#theList").append('<li class="list-group-item">'+depts[i]+'</li>');
-               }
 
             if (phonesarray[0] !== null)
                 $("#phoneOne").append(phonesarray[0]);
@@ -171,6 +141,48 @@ function findLabDetails() {
                 $("#phoneThree").append("");
             }
 
+         $("#nameAr").append(data.doctorNameAr);
+            $("#nameEn").append(data.doctorNameEn);
+            $("#nameE").append(data.doctorNameEn);
+
+            $("#address").append(data.address);
+            $("#openH").append(data.openHour);
+            $("#closedH").append(data.closeHour);
+            $("#startD").append(data.startDate);
+            $("#endD").append(data.endDate);
+
+            $("#lat").append(data.latitude);
+            $("#long").append(data.longitude);
+
+            $("#serviceId").append(data.id);
+            $("#rate").append(data.rate);
+             $("#specialization").append(data.specialization);
+            
+
+
+        }    
+});
+}
+
+function serviceReviews() {
+   
+ $.ajax({ 
+    type: 'GET',
+    url:'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/get/typeid='+2+'/serviceid='+c, 
+    dataType: 'json',
+    success: function (data) { 
+           // console.log(serviceId);
+
+        $.each(data.list_review, function(index, element) {
+           $("#insertRow2").append("<tr><td>"+element.reviewId+"</td><td>"+element.medicalTypeId+"</td><td>"+element.serviceId+"</a></td>\n\
+<td>"+element.description+"</td><td>"+element.date+"</td><td>"+element.type+"</td><td>"+element.employeeEmployeeId+"</td><td>"+element.reviewRate+"</td></tr>");
+        });
     }
 });
 }
+
+
+
+
+
+

@@ -317,17 +317,17 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-title">Add New Hospital</h1>
+                        <h1 class="page-title">Update Pharmacy</h1>
                         <ol class="breadcrumb ">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="../admin.html/index.html">Home</a></li>
                             <li><a href="../admin.html/medicalServices.html">Medical Service Type</a></li>
-                            <li><a href="perService.html">Hospitals List</a></li>
-                            <li class="active">Add Hospital</li>
+                            <li><a href="../pharmacy.html/perService.html">Pharmacies List</a></li>
+                            <li class="active">Update Pharmacy</li>
                     </div>
                 </div>
             </div>
             <div class="panel">
-                <form action="../hospital.html/getAllHospitals.html">
+                <form action="../pharmacy.html/perService.html">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -340,7 +340,7 @@
                                     </span>
 
                                     <progress value="0" hidden="" max="100" id="progress">0%</progress>
-                                    <input type="text" placeholder="Hospital Image" id="urlImage" class="form-control" name="urlImage" required/>  
+                                        <input type="text" id="urlImage" class="form-control" name="urlImage" placeholder="Pharmacy Image" required/>  
                                         <button type="button" hidden="" id="fileInput" value="upload">
                                         </button>        
                                         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
@@ -349,9 +349,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                           
-                        </div>
+<!--                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-id-card-alt" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Hospital ID">
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -360,7 +367,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital EN Name" id="name_en" required>
+                                    <input type="text" class="form-control" placeholder="Pharmacy EN Name" id="pharmacy_name_en" required>
                                 </div>
                             </div>
                         </div>
@@ -370,27 +377,16 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-user" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital AR Name" id="name_ar" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="input-group input-group-icon">
-                                    <span class="input-group-addon">
-                                                <span class="icon fas fa-user-tie" aria-hidden="true"></span>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="CEO Name" id="ceo" required>
+                                    <input type="text" class="form-control" placeholder="Pharmacy AR Name" id="pharmacy_name_ar" required>
                                 </div>
                             </div>
                         </div>
                         
                     </div>
 
+
+                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -398,7 +394,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" id="phone1" placeholder="xxx-xxxxxxxxxxx"  maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone1" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
@@ -408,17 +404,27 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone2" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" required>
                                 </div>
                             </div>
                         </div>
-                          <div class="col-md-6">
+                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-mobile-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="tel" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
+                                    <input type="text" class="form-control" placeholder="xxx-xxxxxxxxxxx" id="phone3" maxlength="15" minlength="0" pattern="[0-9]{3}-[0-9]{11}" >
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group input-group-icon">
+                                    <span class="input-group-addon">
+                                                <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Pharmacy Address" id="pharmacy_address" required>
                                 </div>
                             </div>
                         </div>
@@ -431,7 +437,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="open_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Open Hour" id="pharmacy_open_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +447,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-clock" aria-hidden="true"></span>
                                     </span>
-                                    <input type="time" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="close_hour" required>
+                                    <input type="text" class="form-control ui-timepicker-input" data-plugin="timepicker" autocomplete="off" placeholder="Closed Hour" id="pharmacy_close_hour" required>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +460,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-start" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="start_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="Start Date" id="pharmacy_start_date" required>
                                 </div>
                             </div>
                         </div>
@@ -464,7 +470,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-hourglass-end" aria-hidden="true"></span>
                                     </span>
-                                    <input type="date" class="form-control" data-plugin="datepicker" placeholder="End Date" id="end_date" required>
+                                    <input type="text" class="form-control" data-plugin="datepicker" placeholder="End Date" id="pharmacy_end_date" required>
                                 </div>
                             </div>
                         </div>
@@ -477,7 +483,7 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Lat" id="latitude" required>
+                                    <input type="text" class="form-control" placeholder="Pharmacy Lat" id="pharmacy_latitude" required>
                                 </div>
                             </div>
                         </div>
@@ -487,100 +493,28 @@
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-location-arrow" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Long" id="longitude" required>
+                                    <input type="text" class="form-control" placeholder="Pharmacy Long" id="pharmacy_longitude" required>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="input-group input-group-icon">
                                     <span class="input-group-addon">
                                                 <span class="icon fas fa-map-marker-alt" aria-hidden="true"></span>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Hospital Location" id="address" required>
+                                    <input type="text" class="form-control" placeholder="medical type id" id="medical_type_id" disabled>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <!-- Example Checkboxes -->
-                            <div class="example-wrap">
-                                <h4 class="example-title">Hospitals Departments</h4>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c1" value="Accident and emergency (A&E)">
-                                            <label for="c1">Accident and emergency (A&E)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c2" checked="" value="Anaesthetics">
-                                            <label for="c2">Anaesthetics</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c3" value="Ear nose and throat (ENT)">
-                                            <label for="c3">Ear nose and throat (ENT)
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c4" checked="" value="Elderly services department">
-                                            <label for="c4">Elderly services department
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c5" value="General surgery">
-                                            <label for="c5">General surgery
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c6" checked="" value="Maternity departments">
-                                            <label for="c6">Maternity departments
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c7" value="Neonatal unit">
-                                            <label for="c7">Neonatal unit
-</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="checkbox-custom checkbox-primary">
-                                            <input type="checkbox" id="c8" checked="" value="Obstetrics and gynaecology units">
-                                            <label for="c8">Obstetrics and gynaecology units
-</label>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <!-- End Example Checkboxes -->
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="actionBtn text-center">
-                             <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
+                            <button class="btn btn-default btn-outline btn-round"  type="submit" onclick="validate()">
                                         <i class="icon fas fa-check" aria-hidden="true"></i>
-                                        <span class="">SAVE</span>
+                                        <span class="">DONE</span>
                                     </button>
-
-
-
                         </div>
                     </div>
                 </form>
@@ -651,6 +585,6 @@
     </script>
 
 </body>
-<script src="../jquery-1.7.1.min.js"></script>
-    <script src="../hospital.js/hospital.js"></script>
+ <script src="../jquery-1.7.1.min.js"></script>
+    <script src="../pharmacy.js/updatePharmacy.js"></script>
 </html>

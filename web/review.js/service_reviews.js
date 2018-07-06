@@ -7,6 +7,15 @@ empname =null;
 empid=0;
 serviceReviews();
 serviceComplains();
+
+function deletecookie() {
+
+    document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+
+}
 function serviceReviews() {
     var str = window.location.href;
     var url = new URL(str );
@@ -14,7 +23,7 @@ function serviceReviews() {
     var d = url.searchParams.get("serviceid");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/'+c+'/'+d, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/'+c+'/'+d, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -22,7 +31,7 @@ function serviceReviews() {
           empid=element.employeeEmployeeId;
           
           $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -52,7 +61,7 @@ function serviceComplains() {
     var d = url.searchParams.get("serviceid");
  $.ajax({ 
     type: 'GET', 
-    url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/'+c+'/'+d, 
+    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/'+c+'/'+d, 
     dataType: 'json',
     success: function (data) { 
         $.each(data.list_review, function(index, element) {
@@ -60,7 +69,7 @@ function serviceComplains() {
           empid=element.employeeEmployeeId;
           
           $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
+        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
         method: 'get',
         data: {},
         dataType: 'json',
