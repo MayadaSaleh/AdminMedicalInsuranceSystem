@@ -18,24 +18,23 @@ function deletecookie() {
 
     document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+    window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
 
 }
 function findAll() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/pharmacy/getAll',
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/pharmacy/getAll',
         dataType: 'json', // data type of response
-           headers: {
-        'Access-Control-Allow-Origin': '*',
-       'Access-Control-Allow-Headers': 'Origin , X-Requested-With , Content-Type, Accept'
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Origin , X-Requested-With , Content-Type, Accept'
 
-    },
-      success: function (data) {
+        },
+        success: function (data) {
             $.each(data.pharmacies, function (index, element) {
-                $("#insertRow").append('<tr><td><a href="../pharmacy.html/serviceDetails.html?id=' + element.id + '">' + element.id + "</a></td><td>" + element.nameEn + "</td><td>" + element.startDate + "</td><td>" + element.endDate + "</td><td>" + element.rate + "</td><td>" + element.address + '</td><td><a href="../pharmacy.html/perService.html?id=' + element.id + '&DeleteFlag=true" type="button" class="exampleWarningCancel">' + '<i class="fas fa-trash-alt"></i>' + '</a></td><td><a href="../pharmacy.html/updatePharmacy.html?id=' + element.id +'">' + '<i class="fas fa-pencil-alt"></i>'+"</a></td>\n\</tr>");
+                $("#insertRow").append('<tr><td><a href="../pharmacy.html/serviceDetails.html?id=' + element.id + '">' + element.id + "</a></td><td>" + element.nameEn + "</td><td>" + element.startDate + "</td><td>" + element.endDate + "</td><td>" + element.rate + "</td><td>" + element.address + '</td><td><a href="../pharmacy.html/perService.html?id=' + element.id + '&DeleteFlag=true" type="button" class="exampleWarningCancel">' + '<i class="fas fa-trash-alt"></i>' + '</a></td><td><a href="../pharmacy.html/updatePharmacy.html?id=' + element.id + '">' + '<i class="fas fa-pencil-alt"></i>' + "</a></td>\n\</tr>");
             });
         }
         ,
@@ -46,21 +45,21 @@ function findAll() {
 }
 
 
-function addPharmacy(nameAr,nameEn,address,longitude,latitude,startDate,endDate,openHour,closeHour,phones,image)
+function addPharmacy(nameAr, nameEn, address, longitude, latitude, startDate, endDate, openHour, closeHour, phones, image)
 {
     console.log('addPharmacy');
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: "http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/pharmacy/insert",
+        url: "http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/pharmacy/insert",
         dataType: "json",
-        data: JSON.stringify({"nameAr": nameAr,"nameEn":nameEn, "address": address, "longitude": longitude, "latitude": latitude, "startDate": startDate, "endDate": endDate, "openHour": openHour, "closeHour": closeHour, "pharmacyPhones": phones,"image":image}),
+        data: JSON.stringify({"nameAr": nameAr, "nameEn": nameEn, "address": address, "longitude": longitude, "latitude": latitude, "startDate": startDate, "endDate": endDate, "openHour": openHour, "closeHour": closeHour, "pharmacyPhones": phones, "image": image}),
         success: function (data, textStatus, jqXHR) {
-            window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
+            window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
+            window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
         }
     });
 }
@@ -86,7 +85,7 @@ function formToJSON() {
 
 function validate() {
     var phones = [];
- 
+
     var nameAr = $('#pharmacy_name_ar').val();
     var nameEn = $('#pharmacy_name_en').val();
     var address = $('#pharmacy_address').val();
@@ -96,10 +95,10 @@ function validate() {
     var endDate = $('#pharmacy_end_date').val();
     var openHour = $('#pharmacy_open_hour').val();
     var closeHour = $('#pharmacy_close_hour').val();
-    
-    var phone1=$('#phone1').val();
 
-     if ($('#phone1').val() !== "")
+    var phone1 = $('#phone1').val();
+
+    if ($('#phone1').val() !== "")
     {
         phones.push($('#phone1').val());
     }
@@ -111,25 +110,25 @@ function validate() {
     {
         phones.push($('#phone3').val());
     }
-    
-var term = phone1;
-var re = new RegExp("^([0-9]{3}-[0-9]{11})$");
-if (re.test(term)) {
-     console.log("Valid");
-} 
+
+    var term = phone1;
+    var re = new RegExp("^([0-9]{3}-[0-9]{11})$");
+    if (re.test(term)) {
+        console.log("Valid");
+    }
     var image = $('#urlImage').val();
-    if(nameAr!==""&&nameEn!==""&&re.test(term)&&address!==""&&phone1!==""&&longitude!==""&&latitude!==""&&startDate!==""&&endDate!==""&&openHour!==""&&closeHour!==""&&image!=="")
+    if (nameAr !== "" && nameEn !== "" && re.test(term) && address !== "" && phone1 !== "" && longitude !== "" && latitude !== "" && startDate !== "" && endDate !== "" && openHour !== "" && closeHour !== "" && image !== "")
     {
 
-        addPharmacy(nameAr,nameEn,address,longitude,latitude,startDate,endDate,openHour,closeHour,phones,image);
+        addPharmacy(nameAr, nameEn, address, longitude, latitude, startDate, endDate, openHour, closeHour, phones, image);
     }
 
 
 }
 function deletePharmacy() {
     var result = confirm("You're about to delete Pharmacy , Delete?");
-if (result) {
-                
+    if (result) {
+
         var str = window.location.href;
         var url = new URL(str);
         var elementId = url.searchParams.get("id");
@@ -137,13 +136,13 @@ if (result) {
 
         var requestData = elementId;
         $.ajax({
-            url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/pharmacy/delete/' + requestData,
+            url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/pharmacy/delete/' + requestData,
             type: 'DELETE',
             data: {},
             dataType: 'json',
             success: function (response) {
                 if (response.message !== null) {
-                    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
+                    window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/pharmacy.html/perService.html";
 
                 }
 
@@ -153,13 +152,6 @@ if (result) {
             }
         });
     }
-    }
-
-  
+}
 
 
-
-//$("#p").click(function () {
-//    console.log("button on click");
-//    addPharmacy();
-//});

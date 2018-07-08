@@ -70,6 +70,39 @@
             <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/admin.js/login.js</file>
             <file>file:/C:/Users/Hagar/Desktop/AdminMedicalInsuranceSystem/web/company.js/update.js</file>
         </group>
-        <group name="chat"/>
+        <group name="chat">
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/lab.js/updateLab.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/suggestion.js/get_allsuggestions.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/company.js/insert.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/employee.js/uploadImage.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/pharmacy.js/pharmacy.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.js/addAdmin.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/clinic.js/clinicDetails.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/suggestion.js/get_suggestion.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.html/index.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/review.js/get_reviews.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.js/dashboard.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/employee.js/updateEmployee.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/company.js/company.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/employee.js/getCompanyEmployees.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/lab.js/labDetails.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.html/medicalServices.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/index.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/pharmacy.js/updatePharmacy.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/company.js/SpecificCompany.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/company.js/update.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/review.js/service_reviews.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.html/errrrrr.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/clinic.js/update.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/company.js/getAll.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/lab.js/lab.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/clinic.js/clinic.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/pharmacy.js/pharmacyDetails.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.html/login.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/employee.js/insertEmployee.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.html/addAdmin.html</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/admin.js/login.js</file>
+            <file>file:/D:/hagar-web/AdminMedicalInsuranceSystem/web/employee.js/getEmployee.js</file>
+        </group>
     </open-files>
 </project-private>

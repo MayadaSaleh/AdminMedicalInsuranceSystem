@@ -5,127 +5,124 @@
  */
 
 var c;
- empname =null;
-empid=0;
+empname = null;
+empid = 0;
 serviceReviews();
 serviceComplains();
- findLabDetails(); 
+findLabDetails();
 
 function deletecookie() {
 
     document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+    window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
 
 }
 function serviceReviews() {
     var str = window.location.href;
-    var url = new URL(str );
-     c = url.searchParams.get("id");
- $.ajax({ 
-    type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/4/'+c, 
-    dataType: 'json',
-    success: function (data) { 
-        $.each(data.list_review, function(index, element) {
-          
-          empid=element.employeeEmployeeId;
-          
-          $.ajax({
-        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
-        method: 'get',
-        data: {},
+    var url = new URL(str);
+    c = url.searchParams.get("id");
+    $.ajax({
+        type: 'GET',
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/reviews/getreview/4/' + c,
         dataType: 'json',
-        success: function (response) {
-            if (response.responseMessage.status == true) {       
-                empname=response.employeePojo.name;
+        success: function (data) {
+            $.each(data.list_review, function (index, element) {
+
+                empid = element.employeeEmployeeId;
+
+                $.ajax({
+                    url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + empid,
+                    method: 'get',
+                    data: {},
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.responseMessage.status == true) {
+                            empname = response.employeePojo.name;
+                            console.log(empname);
+                            $("#exampleTabsLineOne").append('<div class="media"><div class="media-left"><a class="avatar avatar-lg" href="javascript:void(0)"><img src=' + response.employeePojo.image + 'alt="..."></a></div><div class="media-body"><h4 class="media-heading">' + empname + '</h4><small><i class="fas fa-calendar-alt"></i>' + element.date + '</small><p>' + element.description + '</p></div></div>');
+                        } else {
+                            resultElement.html("error in Loading data");
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
                 console.log(empname);
-    $("#exampleTabsLineOne").append('<div class="media"><div class="media-left"><a class="avatar avatar-lg" href="javascript:void(0)"><img src='+response.employeePojo.image+'alt="..."></a></div><div class="media-body"><h4 class="media-heading">'+empname+'</h4><small><i class="fas fa-calendar-alt"></i>'+element.date+'</small><p>'+element.description+'</p></div></div>');
-            } else {
-                resultElement.html("error in Loading data");
-            }
-        },
-        error: function (err) {
-            alert(err);
+            });
         }
     });
-          console.log(empname);
-        });
-    }
-});
 }
 
 function serviceComplains() {
     var str = window.location.href;
-    var url = new URL(str );
-     c = url.searchParams.get("id");
- $.ajax({ 
-    type: 'GET', 
-    url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/4/'+c, 
-    dataType: 'json',
-    success: function (data) { 
-        $.each(data.list_review, function(index, element) {
-          
-          empid=element.employeeEmployeeId;
-          
-          $.ajax({
-        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID='+empid,
-        method: 'get',
-        data: {},
+    var url = new URL(str);
+    c = url.searchParams.get("id");
+    $.ajax({
+        type: 'GET',
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/reviews/getcomplain/4/' + c,
         dataType: 'json',
-        success: function (response) {
-            if (response.responseMessage.status == true) {       
-                empname=response.employeePojo.name;
+        success: function (data) {
+            $.each(data.list_review, function (index, element) {
+
+                empid = element.employeeEmployeeId;
+
+                $.ajax({
+                    url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + empid,
+                    method: 'get',
+                    data: {},
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.responseMessage.status == true) {
+                            empname = response.employeePojo.name;
+                            console.log(empname);
+                            $("#exampleTabsLineTwo").append('<div class="media"><div class="media-left"><a class="avatar avatar-lg" href="javascript:void(0)"><img src=' + response.employeePojo.image + 'alt="..."></a></div><div class="media-body"><h4 class="media-heading">' + empname + '</h4><small><i class="fas fa-calendar-alt"></i>' + element.date + '</small><p>' + element.description + '</p></div></div>');
+                        } else {
+                            resultElement.html("error in Loading data");
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
                 console.log(empname);
-    $("#exampleTabsLineTwo").append('<div class="media"><div class="media-left"><a class="avatar avatar-lg" href="javascript:void(0)"><img src='+response.employeePojo.image+'alt="..."></a></div><div class="media-body"><h4 class="media-heading">'+empname+'</h4><small><i class="fas fa-calendar-alt"></i>'+element.date+'</small><p>'+element.description+'</p></div></div>');
-            } else {
-                resultElement.html("error in Loading data");
-            }
-        },
-        error: function (err) {
-            alert(err);
+            });
         }
     });
-          console.log(empname);
-        });
-    }
-});
 }
 
 function findLabDetails() {
-    rootURL='http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/details/get';
+    rootURL = 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/details/get';
     var str = window.location.href;
     var url = new URL(str);
-     c = url.searchParams.get("id");
- $.ajax({ 
-    type: 'GET', 
-    url: rootURL + '/?tid=4&sid=' + c, 
-    dataType: 'json',
-    success: function (data) { 
-        
+    c = url.searchParams.get("id");
+    $.ajax({
+        type: 'GET',
+        url: rootURL + '/?tid=4&sid=' + c,
+        dataType: 'json',
+        success: function (data) {
+
             var phones = [];
             var phonesarray = [];
 
             var depts = [];
             var departments = [];
-            depts=data.labSpecializations;
+            depts = data.labSpecializations;
             phones = data.labPhones;
             for (var i = 0; i < phones.length; i++)
             {
                 phonesarray.push(phones[i]);
 
             }
-             for (var i = 0; i < depts.length; i++)
+            for (var i = 0; i < depts.length; i++)
             {
                 departments.push(depts[i]);
 
             }
-                        $("#id").append(c);
-
+            $("#id").append(c);
             $("#nameAr").append(data.nameAr);
             $("#nameE").append(data.nameEn);
-
             $("#address").append(data.address);
             $("#openH").append(data.openHour);
             $("#closedH").append(data.closeHour);
@@ -133,22 +130,18 @@ function findLabDetails() {
             $("#endD").append(data.endDate);
             $("#nameE").append(data.nameEn);
             $("#ceo").append(data.ceo);
-
             $("#lat").append(data.latitude);
             $("#long").append(data.longitude);
-
             $("#serviceId").append(data.id);
             $("#list").append("Labs List");
-                        $("#rate").append(data.rate);
-
+            $("#rate").append(data.rate);
             $("#edit").append("Edit Lab");
-            
-                        $("#del").append("Delete Lab");
+            $("#del").append("Delete Lab");
 
-               for(var i=0;i<depts.length;i++)
-               {
-                   $("#theList").append('<li class="list-group-item">'+depts[i]+'</li>');
-               }
+            for (var i = 0; i < depts.length; i++)
+            {
+                $("#theList").append('<li class="list-group-item">' + depts[i] + '</li>');
+            }
 
             if (phonesarray[0] !== null)
                 $("#phoneOne").append(phonesarray[0]);
@@ -171,6 +164,6 @@ function findLabDetails() {
                 $("#phoneThree").append("");
             }
 
-    }
-});
+        }
+    });
 }

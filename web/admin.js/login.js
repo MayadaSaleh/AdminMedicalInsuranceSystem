@@ -3,20 +3,15 @@
 function checkLoginData() {
 
     var adminName = document.getElementById("userName").value;
-
     console.log("name" + adminName);
-    //   $('#uname').val();
     var adminPassword = document.getElementById("password").value;
     console.log("passsss" + ('#password').val);
-
-    //$('#psw').val();
-
     console.log(adminName);
     console.log(adminPassword);
 
 
     $.ajax({
-        url: 'http://localhost:8084/MedicalInsuranceSystem/api/version1/admin/checkAdmin',
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/admin/checkAdmin',
         type: 'POST',
         data: JSON.stringify(eval({"username": adminName, "password": adminPassword})),
         contentType: "application/json; charset=utf-8",
@@ -28,17 +23,17 @@ function checkLoginData() {
                 setCookie("usernameAdminConsolto", adminName, 30);
                 setCookie("passwordAdminConsolto", adminPassword, 30);
 
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
+                window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/index.html";
 
             } else {
                 alert("Login error, please try again");
-                window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
+                window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
 
             }
         },
         error: function (err) {
             alert("Login error, please try again");
-            window.location.href = "http://localhost:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
+            window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/login.html";
         }
     });
 

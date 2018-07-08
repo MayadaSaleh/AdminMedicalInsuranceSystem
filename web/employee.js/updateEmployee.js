@@ -3,26 +3,22 @@ function deletecookie() {
 
     document.cookie = "usernameAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "passwordAdminConsolto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-    window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
+    window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/admin.html/splashScreen.html";
 
 }
 
 function dispalyEmployee() {
 
-    //   console.log(c+"ccccc");
 
     var resultElement = $('#resultDiv');
-
     var str = window.location.href;
     var url = new URL(str);
     var c = url.searchParams.get("employeeId");
     transferedCompanyId = url.searchParams.get("companyId");
 
 
-//var requestData = $('#employeeId').val();
     $.ajax({
-        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/user/getEmployee/employeeID=' + c,
         method: 'get',
         data: {},
         dataType: 'json',
@@ -31,11 +27,8 @@ function dispalyEmployee() {
                 resultElement.html(response.employeePojo.id + " " + response.employeePojo.email + " " + response.responseMessage.message);
 
                 console.log("before " + document.getElementById("employeeId"));
-
                 document.getElementById("employeeId").value = response.employeePojo.id;
                 document.getElementById("email").value = response.employeePojo.email;
-
-
                 document.getElementById("name").value = response.employeePojo.name;
                 document.getElementById("address").value = response.employeePojo.address;
                 document.getElementById("job").value = response.employeePojo.job;
@@ -45,18 +38,7 @@ function dispalyEmployee() {
                 document.getElementById("packageType").value = response.employeePojo.packageType;
                 console.log("phoneeeee" + response.employeePojo.phones[0]);
                 document.getElementById("phone1").value = response.employeePojo.phones[0];
-
-//
-//                $("#name").text(response.employeePojo.name);
-//                $("#address").text(response.employeePojo.address);
-//                $("#job").text(response.employeePojo.job);
-//                $("#password").text(response.employeePojo.password);
-//                $("#startDate").text(response.employeePojo.startDate);
-//                $("#endDate").text(response.employeePojo.endDate);
-//                $("#packageType").text(response.employeePojo.packageType);
-//                $("#phone1").text(response.employeePojo.phones[0]);
                 document.getElementById("urlImage").value = response.employeePojo.image;
-
                 console.log("after " + response.employeePojo.email);
 
             } else {
@@ -95,7 +77,7 @@ function validateUpdateEmployee() {
             requestJob !== "" && requestPassword !== "" && requestImage !== "" && requestStartDate !== "" && requestEndDate !== "" && requestPackageType !== "" && requestPhone1 !== "") {
 
         updateEmployeeInCompany(requestIDD, requestName, requestEmail, requestAddress, requestJob, requestPassword, requestImage, requestStartDate, requestEndDate, requestPackageType, requestPhone1)
-        
+
     }
 }
 function updateEmployeeInCompany(requestIDD, requestName, requestEmail, requestAddress, requestJob, requestPassword, requestImage, requestStartDate, requestEndDate, requestPackageType, requestPhone1) {
@@ -104,7 +86,7 @@ function updateEmployeeInCompany(requestIDD, requestName, requestEmail, requestA
     console.log("in update id= " + requestIDD);
 
     $.ajax({
-        url: 'http://192.168.137.1:8084/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestIDD,
+        url: 'http://192.168.1.8:8084/MedicalInsuranceSystem/api/version1/user/updateEmployee/employeeID=' + requestIDD,
         type: 'PUT',
         data: JSON.stringify(eval({"id": requestIDD, "email": requestEmail, "name": requestName, "address": requestAddress, "password": requestPassword, "job": requestJob, "image": requestImage, "companyId": requestCompanyID, "startDate": requestStartDate, "endDate": requestEndDate, "packageType": requestPackageType, "phones": [requestPhone1]})),
         contentType: "application/json; charset=utf-8",
@@ -117,7 +99,7 @@ function updateEmployeeInCompany(requestIDD, requestName, requestEmail, requestA
             }
 
 
-            window.location.href = "http://192.168.137.1:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + transferedCompanyId;
+            window.location.href = "http://192.168.1.8:8084/AdminMedicalInsuranceSystem/company.html/SpecificCompany.html?companyId=" + transferedCompanyId;
         },
         error: function (err) {
             alert(err);
